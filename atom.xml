@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>clown Website</title>
+  
+  <subtitle>test for hexo</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://uniquecrownclown.github.io/"/>
+  <updated>2017-09-22T03:03:07.094Z</updated>
+  <id>https://uniquecrownclown.github.io/</id>
+  
+  <author>
+    <name>clown</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>周杰伦专辑列表</title>
+    <link href="https://uniquecrownclown.github.io/2017/09/21/jay%E7%9A%84%E4%B8%93%E8%BE%91/"/>
+    <id>https://uniquecrownclown.github.io/2017/09/21/jay的专辑/</id>
+    <published>2017-09-21T03:23:51.000Z</published>
+    <updated>2017-09-22T03:03:07.094Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/jay.jpg" alt=""></p><pre><code>jay(2000)范特西(2001)八度空间(2002)叶惠美(2003)七里香(2004)十一月的肖邦(2005)依然范特西(2006)我很忙(2007)魔杰座(2008)跨时代(2010)惊叹号(2011)十二新作(2012)哎呦,不错哦(2014)周杰伦的床边故事(2016)</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;/images/jay.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;jay(2000)
+范特西(2001)
+八度空间(2002)
+叶惠美(2003)
+七里香(2004)
+十一月的肖邦(2005)
+依然范特西(2006)
+我很忙(2007)
+魔
+      
+    
+    </summary>
+    
+      <category term="音乐篮球" scheme="https://uniquecrownclown.github.io/categories/%E9%9F%B3%E4%B9%90%E7%AF%AE%E7%90%83/"/>
+    
+    
+      <category term="博客，周杰伦，随笔" scheme="https://uniquecrownclown.github.io/tags/%E5%8D%9A%E5%AE%A2%EF%BC%8C%E5%91%A8%E6%9D%B0%E4%BC%A6%EF%BC%8C%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>紫金的前世今生</title>
+    <link href="https://uniquecrownclown.github.io/2017/09/21/%E9%97%AA%E8%80%80%E6%96%AF%E5%8F%B0%E6%99%AE%E6%96%AF%E4%B8%AD%E5%BF%83%E7%9A%84%E7%B4%AB%E9%87%91/"/>
+    <id>https://uniquecrownclown.github.io/2017/09/21/闪耀斯台普斯中心的紫金/</id>
+    <published>2017-09-21T03:23:51.000Z</published>
+    <updated>2017-09-29T08:27:48.887Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/staples.png" alt=""></p><p>Staples Center</p><p>Laker</p><p>Bryant</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;/images/staples.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Staples Center&lt;/p&gt;
+&lt;p&gt;Laker&lt;/p&gt;
+&lt;p&gt;Bryant&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="音乐篮球" scheme="https://uniquecrownclown.github.io/categories/%E9%9F%B3%E4%B9%90%E7%AF%AE%E7%90%83/"/>
+    
+    
+      <category term="博客，洛杉矶湖人，斯台普斯中心，布莱恩特，随笔" scheme="https://uniquecrownclown.github.io/tags/%E5%8D%9A%E5%AE%A2%EF%BC%8C%E6%B4%9B%E6%9D%89%E7%9F%B6%E6%B9%96%E4%BA%BA%EF%BC%8C%E6%96%AF%E5%8F%B0%E6%99%AE%E6%96%AF%E4%B8%AD%E5%BF%83%EF%BC%8C%E5%B8%83%E8%8E%B1%E6%81%A9%E7%89%B9%EF%BC%8C%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello Hexo!</title>
+    <link href="https://uniquecrownclown.github.io/2017/09/21/hexo/"/>
+    <id>https://uniquecrownclown.github.io/2017/09/21/hexo/</id>
+    <published>2017-09-21T01:58:05.358Z</published>
+    <updated>2017-09-22T06:13:16.845Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/greatWall.jpg" alt=""></p><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server //在本地服务器上测试，端口4000</div></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate //刷新hexo的资源</div></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy //同步到github</div></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p><h3 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next //下载一个next主题的例子</div></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/themes/" target="_blank" rel="external">Themes</a></p><h3 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">'文章名'</span> //在<span class="built_in">source</span>/_posts路径下创建的文章</div><div class="line">//图片资源放在hexo/resources下用markdown相对路径的方式引入</div></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/zh-cn/docs/writing.html" target="_blank" rel="external">Writing</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;/images/greatWall.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is yo
+      
+    
+    </summary>
+    
+      <category term="web开发" scheme="https://uniquecrownclown.github.io/categories/web%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="web开发，hexo，博客配置" scheme="https://uniquecrownclown.github.io/tags/web%E5%BC%80%E5%8F%91%EF%BC%8Chexo%EF%BC%8C%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE/"/>
+    
+  </entry>
+  
+</feed>
