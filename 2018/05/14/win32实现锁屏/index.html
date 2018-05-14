@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>win32下的锁屏实现 | clown Website</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="锁屏实现,java屏蔽事件" />
+    
+    <meta name="description" content="win32下的锁屏实现12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989">
+<meta name="keywords" content="锁屏实现,java屏蔽事件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="win32下的锁屏实现">
+<meta property="og:url" content="https://uniquecrownclown.github.io/2018/05/14/win32实现锁屏/index.html">
+<meta property="og:site_name" content="clown Website">
+<meta property="og:description" content="win32下的锁屏实现12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://uniquecrownclown.github.io/images/greatWall.jpg">
+<meta property="og:updated_time" content="2018-05-14T03:05:18.484Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="win32下的锁屏实现">
+<meta name="twitter:description" content="win32下的锁屏实现12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989">
+<meta name="twitter:image" content="https://uniquecrownclown.github.io/images/greatWall.jpg">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="clown Website" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">我想和你饮一壶陈年老酒 席地而坐 听风画眉 然后点一根烟，烧光我的所有</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/咸鱼摊贩/">咸鱼摊贩</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/知识气球/">知识气球</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/音乐篮球/">音乐篮球</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/知识气球/">知识气球</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-win32实现锁屏" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        win32下的锁屏实现
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/05/14/win32实现锁屏/" class="article-date">
+            <time datetime="2018-05-14T02:18:01.829Z" itemprop="datePublished">2018-05-14</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/java屏蔽事件/">java屏蔽事件</a>, <a class="tag-link" href="/tags/锁屏实现/">锁屏实现</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="/images/greatWall.jpg" alt=""></p>
+<h3 id="win32下的锁屏实现"><a href="#win32下的锁屏实现" class="headerlink" title="win32下的锁屏实现"></a>win32下的锁屏实现</h3><pre><code><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> org.eclipse.swt.events.DisposeEvent;  </div><div class="line"><span class="keyword">import</span> org.eclipse.swt.events.DisposeListener;  </div><div class="line"><span class="keyword">import</span> org.eclipse.swt.internal.win32.OS;  </div><div class="line"><span class="keyword">import</span> org.eclipse.swt.widgets.Shell;  </div><div class="line"><span class="keyword">import</span> org.sf.feeling.swt.win32.extension.hook.Hook;  </div><div class="line"><span class="keyword">import</span> org.sf.feeling.swt.win32.extension.hook.Keyboard_LLHook;  </div><div class="line"><span class="keyword">import</span> org.sf.feeling.swt.win32.extension.hook.Mouse_LLHook;  </div><div class="line"><span class="keyword">import</span> org.sf.feeling.swt.win32.extension.hook.data.Keyboard_LLHookData;  </div><div class="line"><span class="keyword">import</span> org.sf.feeling.swt.win32.extension.hook.data.Mouse_LLHookData;  </div><div class="line"><span class="keyword">import</span> org.sf.feeling.swt.win32.extension.hook.interceptor.InterceptorFlag;  </div><div class="line"><span class="keyword">import</span> org.sf.feeling.swt.win32.extension.hook.interceptor.Keyboard_LLHookInterceptor;  </div><div class="line"><span class="keyword">import</span> org.sf.feeling.swt.win32.extension.hook.interceptor.Mouse_LLHookInterceptor;  </div><div class="line"><span class="keyword">import</span> org.sf.feeling.swt.win32.extension.registry.RegistryKey;  </div><div class="line"><span class="keyword">import</span> org.sf.feeling.swt.win32.extension.registry.RegistryValue;  </div><div class="line"><span class="keyword">import</span> org.sf.feeling.swt.win32.extension.registry.RootKey;  </div><div class="line"><span class="keyword">import</span> org.sf.feeling.swt.win32.extension.registry.ValueType;  </div><div class="line"><span class="comment">/** </span></div><div class="line"><span class="comment"> * Ticket:屏蔽系统快捷键，供锁屏使用(添加禁用鼠标事件) </span></div><div class="line"><span class="comment"> *  </span></div><div class="line"><span class="comment"> * <span class="doctag">@author</span> XXXXX </span></div><div class="line"><span class="comment"> */</span>  </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WinEventInterceptor</span> </span>&#123;  </div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> Shell tagShell;  </div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> Keyboard_LLHookInterceptor keyboard_LLHookInterceptor;  </div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> Mouse_LLHookInterceptor mouse_LLHookInterceptor;  </div><div class="line">	<span class="keyword">static</span> &#123;  </div><div class="line">		keyboard_LLHookInterceptor = <span class="keyword">new</span> Keyboard_LLHookInterceptor() &#123;  </div><div class="line">			<span class="meta">@Override</span>  </div><div class="line">			<span class="function"><span class="keyword">public</span> InterceptorFlag <span class="title">intercept</span><span class="params">(Keyboard_LLHookData hookData)</span> </span>&#123;  </div><div class="line">				<span class="keyword">int</span> vkCode = hookData.vkCode();  </div><div class="line">				<span class="keyword">boolean</span> isCtrlPressed = OS.GetKeyState(<span class="number">17</span>) &lt; <span class="number">0</span> ? <span class="keyword">true</span> : <span class="keyword">false</span>;  </div><div class="line">				<span class="keyword">boolean</span> isAltPressed = OS.GetKeyState(<span class="number">18</span>) &lt; <span class="number">0</span> ? <span class="keyword">true</span> : <span class="keyword">false</span>;  </div><div class="line">				<span class="comment">// 屏蔽windows键  </span></div><div class="line">				<span class="keyword">if</span> (vkCode == <span class="number">91</span>) &#123;  </div><div class="line">					<span class="keyword">return</span> InterceptorFlag.FALSE;  </div><div class="line">				&#125;  </div><div class="line">				<span class="comment">// 屏蔽ALT+ESC  </span></div><div class="line">				<span class="keyword">if</span> (isAltPressed &amp;&amp; vkCode == <span class="number">27</span>) &#123;  </div><div class="line">					<span class="keyword">return</span> InterceptorFlag.FALSE;  </div><div class="line">				&#125;  </div><div class="line">				<span class="comment">// 屏蔽CTRL+ESC  </span></div><div class="line">				<span class="keyword">if</span> (isCtrlPressed &amp;&amp; vkCode == <span class="number">27</span>) &#123;  </div><div class="line">					<span class="keyword">return</span> InterceptorFlag.FALSE;  </div><div class="line">				&#125;  </div><div class="line">				<span class="comment">// 屏蔽ALT+TAB  </span></div><div class="line">				<span class="keyword">if</span> (isAltPressed &amp;&amp; vkCode == <span class="number">9</span>) &#123;  </div><div class="line">					<span class="keyword">return</span> InterceptorFlag.FALSE;  </div><div class="line">				&#125;  </div><div class="line">				<span class="comment">// 屏蔽ALT+F4  </span></div><div class="line">				<span class="keyword">if</span> (isAltPressed &amp;&amp; vkCode == <span class="number">115</span>) &#123;  </div><div class="line">					<span class="keyword">return</span> InterceptorFlag.FALSE;  </div><div class="line">				&#125;  </div><div class="line">				<span class="keyword">return</span> InterceptorFlag.TRUE;  </div><div class="line">			&#125;  </div><div class="line">		&#125;;  </div><div class="line">		mouse_LLHookInterceptor = <span class="keyword">new</span> Mouse_LLHookInterceptor() &#123;  </div><div class="line">			<span class="meta">@Override</span>  </div><div class="line">			<span class="function"><span class="keyword">public</span> InterceptorFlag <span class="title">intercept</span><span class="params">(Mouse_LLHookData hookData)</span> </span>&#123;  </div><div class="line">				<span class="keyword">return</span> InterceptorFlag.FALSE;  </div><div class="line">			&#125;  </div><div class="line">		&#125;;  </div><div class="line">	&#125;  </div><div class="line">	<span class="comment">/** </span></div><div class="line"><span class="comment">	 * 根据disable为true时，鼠标不可用；false时，鼠标可用 </span></div><div class="line"><span class="comment">	 *  </span></div><div class="line"><span class="comment">	 * <span class="doctag">@param</span> disable </span></div><div class="line"><span class="comment">	 */</span>  </div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">setMouseDisable</span><span class="params">(<span class="keyword">boolean</span> disable)</span> </span>&#123;  </div><div class="line">		<span class="keyword">if</span> (disable) &#123;  </div><div class="line">			Mouse_LLHook.addHookInterceptor(mouse_LLHookInterceptor);  </div><div class="line">			<span class="keyword">if</span> (!Mouse_LLHook.isInstalled())  </div><div class="line">				Mouse_LLHook.installHook();  </div><div class="line">		&#125; <span class="keyword">else</span> &#123;  </div><div class="line">			<span class="keyword">if</span> (Mouse_LLHook.isInstalled())  </div><div class="line">				Mouse_LLHook.unInstallHook();  </div><div class="line">		&#125;  </div><div class="line">	&#125;  </div><div class="line">	<span class="comment">/** </span></div><div class="line"><span class="comment">	 * 自定义添加禁用哪些鼠标事件 </span></div><div class="line"><span class="comment">	 *  </span></div><div class="line"><span class="comment">	 * <span class="doctag">@param</span> disable </span></div><div class="line"><span class="comment">	 * <span class="doctag">@param</span> mouseEvents </span></div><div class="line"><span class="comment">	 */</span>  </div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">setMouseDisable</span><span class="params">(<span class="keyword">boolean</span> disable, <span class="keyword">final</span> MOUSE_EVENT... mouseEvents)</span> </span>&#123;  </div><div class="line">		<span class="keyword">if</span> (disable) &#123;  </div><div class="line">			Mouse_LLHook.addHookInterceptor(<span class="keyword">new</span> Mouse_LLHookInterceptor() &#123;  </div><div class="line">				<span class="meta">@Override</span>  </div><div class="line">				<span class="function"><span class="keyword">public</span> InterceptorFlag <span class="title">intercept</span><span class="params">(Mouse_LLHookData hookData)</span> </span>&#123;  </div><div class="line">					MOUSE_EVENT event = <span class="keyword">null</span>;  </div><div class="line">					<span class="keyword">if</span> (hookData.getWParam() == <span class="number">512</span>) &#123;  </div><div class="line">						event = MOUSE_EVENT.MOVE;  </div><div class="line">					&#125; <span class="keyword">else</span> <span class="keyword">if</span> (hookData.getWParam() == <span class="number">513</span> || hookData.getWParam() == <span class="number">514</span>) &#123;  </div><div class="line">						event = MOUSE_EVENT.LEFT_PRESS;  </div><div class="line">					&#125; <span class="keyword">else</span> <span class="keyword">if</span> (hookData.getWParam() == <span class="number">516</span> || hookData.getWParam() == <span class="number">517</span>) &#123;  </div><div class="line">						event = MOUSE_EVENT.RIGHT_PRESS;  </div><div class="line">					&#125; <span class="keyword">else</span> <span class="keyword">if</span> (hookData.getWParam() == <span class="number">519</span> || hookData.getWParam() == <span class="number">520</span>) &#123;  </div><div class="line">						event = MOUSE_EVENT.MIDDLE_PRESS;  </div><div class="line">					&#125; <span class="keyword">else</span> <span class="keyword">if</span> (hookData.getWParam() == <span class="number">522</span> &amp;&amp; hookData.getMouseData() &gt; <span class="number">0</span>) &#123;  </div><div class="line">						event = MOUSE_EVENT.WHEEL_UP;  </div><div class="line">					&#125; <span class="keyword">else</span> <span class="keyword">if</span> (hookData.getWParam() == <span class="number">522</span> &amp;&amp; hookData.getMouseData() &lt; <span class="number">0</span>) &#123;  </div><div class="line">						event = MOUSE_EVENT.WHEEL_DOWN;  </div><div class="line">					&#125;  </div><div class="line">					<span class="keyword">for</span> (MOUSE_EVENT mouse_event : mouseEvents) &#123;  </div><div class="line">						<span class="keyword">if</span> (mouse_event == event) &#123;  </div><div class="line">							<span class="keyword">return</span> InterceptorFlag.FALSE;  </div><div class="line">						&#125;  </div><div class="line">					&#125;  </div><div class="line">					<span class="keyword">return</span> InterceptorFlag.TRUE;  </div><div class="line">				&#125;  </div><div class="line">			&#125;);  </div><div class="line">			<span class="keyword">if</span> (!Mouse_LLHook.isInstalled())  </div><div class="line">				Mouse_LLHook.installHook();  </div><div class="line">		&#125; <span class="keyword">else</span> &#123;  </div><div class="line">			<span class="keyword">if</span> (Mouse_LLHook.isInstalled())  </div><div class="line">				Mouse_LLHook.unInstallHook();  </div><div class="line">		&#125;  </div><div class="line">	&#125;  </div><div class="line">	<span class="comment">/** </span></div><div class="line"><span class="comment">	 * 禁用几个快捷键，windows键，ALT+ESC，CTRL+ESC，ALT+TAB，ALT+F4，任务管理器 </span></div><div class="line"><span class="comment">	 *  </span></div><div class="line"><span class="comment">	 * <span class="doctag">@param</span> shell </span></div><div class="line"><span class="comment">	 *            程序主窗口 </span></div><div class="line"><span class="comment">	 * <span class="doctag">@param</span> disable </span></div><div class="line"><span class="comment">	 *            是否禁用 </span></div><div class="line"><span class="comment">	 */</span>  </div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">setKeyDisable</span><span class="params">(<span class="keyword">final</span> Shell shell, <span class="keyword">boolean</span> disable)</span> </span>&#123;  </div><div class="line">		<span class="keyword">if</span> (shell == <span class="keyword">null</span>) &#123;  </div><div class="line">			<span class="keyword">return</span>;  </div><div class="line">		&#125;  </div><div class="line">		DisposeListener disposeListener = <span class="keyword">new</span> DisposeListener() &#123;  </div><div class="line">			<span class="meta">@Override</span>  </div><div class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">widgetDisposed</span><span class="params">(DisposeEvent e)</span> </span>&#123;  </div><div class="line">				<span class="keyword">if</span> (Hook.KEYBOARD.isInstalled(shell))  </div><div class="line">					Hook.KEYBOARD.uninstall(shell);  </div><div class="line">				taskmgrDisable(<span class="keyword">false</span>);  </div><div class="line">			&#125;  </div><div class="line">		&#125;;  </div><div class="line">		<span class="keyword">if</span> (disable) &#123;  </div><div class="line">			<span class="keyword">if</span> (tagShell == shell) &#123;  </div><div class="line">				<span class="keyword">return</span>;  </div><div class="line">			&#125;  </div><div class="line">			taskmgrDisable(disable);  </div><div class="line">			Keyboard_LLHook.addHookInterceptor(keyboard_LLHookInterceptor);  </div><div class="line">			<span class="keyword">if</span> (!Keyboard_LLHook.isInstalled())  </div><div class="line">				Keyboard_LLHook.installHook();  </div><div class="line">			shell.addDisposeListener(disposeListener);  </div><div class="line">			tagShell = shell;  </div><div class="line">		&#125; <span class="keyword">else</span> &#123;  </div><div class="line">			<span class="keyword">if</span> (tagShell != shell) &#123;  </div><div class="line">				<span class="keyword">return</span>;  </div><div class="line">			&#125;  </div><div class="line">			taskmgrDisable(disable);  </div><div class="line">			<span class="keyword">if</span> (Keyboard_LLHook.isInstalled())  </div><div class="line">				Keyboard_LLHook.unInstallHook();  </div><div class="line">			shell.removeDisposeListener(disposeListener);  </div><div class="line">			tagShell = <span class="keyword">null</span>;  </div><div class="line">		&#125;  </div><div class="line">	&#125;  </div><div class="line">	<span class="comment">/** </span></div><div class="line"><span class="comment">	 * 禁用任务管理器 </span></div><div class="line"><span class="comment">	 *  </span></div><div class="line"><span class="comment">	 * <span class="doctag">@param</span> useable </span></div><div class="line"><span class="comment">	 *            useable:true为禁用，false为启用 </span></div><div class="line"><span class="comment">	 */</span>  </div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">taskmgrDisable</span><span class="params">(<span class="keyword">boolean</span> useable)</span> </span>&#123;  </div><div class="line">		RootKey currentUser = RootKey.HKEY_CURRENT_USER;  </div><div class="line">		RegistryKey key = <span class="keyword">new</span> RegistryKey(currentUser,  </div><div class="line">				<span class="string">"Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\System"</span>);  </div><div class="line">		<span class="keyword">if</span> (!key.exists()) &#123;  </div><div class="line">			key.create();  </div><div class="line">		&#125;  </div><div class="line">		RegistryValue value = <span class="keyword">new</span> RegistryValue();  </div><div class="line">		value.setType(ValueType.REG_DWORD);  </div><div class="line">		<span class="keyword">if</span> (useable)  </div><div class="line">			value.setData(<span class="number">1</span>);  </div><div class="line">		<span class="keyword">else</span>  </div><div class="line">			value.setData(<span class="number">0</span>);  </div><div class="line">		value.setName(<span class="string">"DisableTaskmgr"</span>);  </div><div class="line">		key.setValue(value);  </div><div class="line">	&#125;  </div><div class="line">	<span class="keyword">enum</span> MOUSE_EVENT &#123;  </div><div class="line">		MOVE, LEFT_PRESS, RIGHT_PRESS, MIDDLE_PRESS, WHEEL_UP, WHEEL_DOWN  </div><div class="line">	&#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre>
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://uniquecrownclown.github.io/2018/05/14/win32实现锁屏/" data-id="cjh5nrtm60000joa3u20kjoot" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="uyan_frame"></div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="https://twitter.com/CrownJackie" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/UniqueCrownClown" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/atom.xml" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2017/10/13/10月13随笔/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">10月13随笔</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/05/14/win32实现锁屏/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/greatWall.jpg)" alt="win32下的锁屏实现" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/知识气球/">知识气球</a></p>
+                            <p class="item-title"><a href="/2018/05/14/win32实现锁屏/" class="title">win32下的锁屏实现</a></p>
+                            <p class="item-date"><time datetime="2018-05-14T02:18:01.829Z" itemprop="datePublished">2018-05-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/10/13/10月13随笔/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/suibi.jpg)" alt="10月13随笔" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/咸鱼摊贩/">咸鱼摊贩</a></p>
+                            <p class="item-title"><a href="/2017/10/13/10月13随笔/" class="title">10月13随笔</a></p>
+                            <p class="item-date"><time datetime="2017-10-13T03:20:32.000Z" itemprop="datePublished">2017-10-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/09/26/红壳桃/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/hongtao.jpg)" alt="红壳桃" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/咸鱼摊贩/">咸鱼摊贩</a></p>
+                            <p class="item-title"><a href="/2017/09/26/红壳桃/" class="title">红壳桃</a></p>
+                            <p class="item-date"><time datetime="2017-09-26T03:23:20.000Z" itemprop="datePublished">2017-09-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/09/21/jay的专辑/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/jay.jpg)" alt="周杰伦专辑列表" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/音乐篮球/">音乐篮球</a></p>
+                            <p class="item-title"><a href="/2017/09/21/jay的专辑/" class="title">周杰伦专辑列表</a></p>
+                            <p class="item-date"><time datetime="2017-09-21T03:23:51.000Z" itemprop="datePublished">2017-09-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/09/21/闪耀斯台普斯中心的紫金/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/staples.png)" alt="紫金的前世今生" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/音乐篮球/">音乐篮球</a></p>
+                            <p class="item-title"><a href="/2017/09/21/闪耀斯台普斯中心的紫金/" class="title">紫金的前世今生</a></p>
+                            <p class="item-date"><time datetime="2017-09-21T03:23:51.000Z" itemprop="datePublished">2017-09-21</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">联系方式</h3>
+        <div class="widget">
+            <p>QQ: 1129986876</p>
+            <p>email: 1129986876@qq.com</p>
+        </div>
+    </div>
+    
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/咸鱼摊贩/">咸鱼摊贩</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/知识气球/">知识气球</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/音乐篮球/">音乐篮球</a><span class="category-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/java屏蔽事件/">java屏蔽事件</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/专辑/">专辑</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客，10月13，随笔/">博客，10月13，随笔</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/周杰伦/">周杰伦</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/洛杉矶湖人，斯台普斯中心，布莱恩特/">洛杉矶湖人，斯台普斯中心，布莱恩特</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知识气球，hexo，博客配置/">知识气球，hexo，博客配置</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/红壳桃/">红壳桃</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/锁屏实现/">锁屏实现</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/java屏蔽事件/" style="font-size: 10px;">java屏蔽事件</a> <a href="/tags/专辑/" style="font-size: 10px;">专辑</a> <a href="/tags/博客，10月13，随笔/" style="font-size: 10px;">博客，10月13，随笔</a> <a href="/tags/周杰伦/" style="font-size: 10px;">周杰伦</a> <a href="/tags/洛杉矶湖人，斯台普斯中心，布莱恩特/" style="font-size: 10px;">洛杉矶湖人，斯台普斯中心，布莱恩特</a> <a href="/tags/知识气球，hexo，博客配置/" style="font-size: 10px;">知识气球，hexo，博客配置</a> <a href="/tags/红壳桃/" style="font-size: 10px;">红壳桃</a> <a href="/tags/锁屏实现/" style="font-size: 10px;">锁屏实现</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 clown</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2145676"></script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
