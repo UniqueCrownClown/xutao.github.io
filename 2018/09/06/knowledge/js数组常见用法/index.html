@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="javascript数组常见原型方法Array.indexOf&amp;amp;Array.includesArray.indexOf返回的是位置的index,Array.includes返回boolean 123456const characters = [0,1,2,3];console.log(characters.indexOf(0));// 0console.log(characters.inc">
+<meta name="description" content="javascript数组常见原型方法prototype,call&amp;amp;&amp;amp;apply prototype是函数的一个属性，并且是函数的原型对象。引用它的必然是函数Array.prototype是一个数组String.prototype是一个字符串Object.prototype是一个对象 prototype的应用 2.1 原形对象增加公有属性 2.2 原形对象增加公有函数 2.3 实现原">
 <meta name="keywords" content="javascript，Array">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Array一些用法总结!">
+<meta property="og:title" content="Array一些用法总结">
 <meta property="og:url" content="https://uniquecrownclown.github.io/2018/09/06/knowledge/js数组常见用法/index.html">
 <meta property="og:site_name" content="uniquecrownclown">
-<meta property="og:description" content="javascript数组常见原型方法Array.indexOf&amp;amp;Array.includesArray.indexOf返回的是位置的index,Array.includes返回boolean 123456const characters = [0,1,2,3];console.log(characters.indexOf(0));// 0console.log(characters.inc">
+<meta property="og:description" content="javascript数组常见原型方法prototype,call&amp;amp;&amp;amp;apply prototype是函数的一个属性，并且是函数的原型对象。引用它的必然是函数Array.prototype是一个数组String.prototype是一个字符串Object.prototype是一个对象 prototype的应用 2.1 原形对象增加公有属性 2.2 原形对象增加公有函数 2.3 实现原">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-07T01:33:23.254Z">
+<meta property="og:updated_time" content="2019-03-27T02:54:49.644Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Array一些用法总结!">
-<meta name="twitter:description" content="javascript数组常见原型方法Array.indexOf&amp;amp;Array.includesArray.indexOf返回的是位置的index,Array.includes返回boolean 123456const characters = [0,1,2,3];console.log(characters.indexOf(0));// 0console.log(characters.inc">
+<meta name="twitter:title" content="Array一些用法总结">
+<meta name="twitter:description" content="javascript数组常见原型方法prototype,call&amp;amp;&amp;amp;apply prototype是函数的一个属性，并且是函数的原型对象。引用它的必然是函数Array.prototype是一个数组String.prototype是一个字符串Object.prototype是一个对象 prototype的应用 2.1 原形对象增加公有属性 2.2 原形对象增加公有函数 2.3 实现原">
 
 
 
@@ -128,7 +128,7 @@
 
 
 
-  <title>Array一些用法总结! | uniquecrownclown</title>
+  <title>Array一些用法总结 | uniquecrownclown</title>
   
 
 
@@ -282,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Array一些用法总结!</h1>
+          <h1 class="post-title" itemprop="name headline">Array一些用法总结</h1>
         
 
         <div class="post-meta">
@@ -354,9 +354,14 @@
       
 
       
-        <h2 id="javascript数组常见原型方法"><a href="#javascript数组常见原型方法" class="headerlink" title="javascript数组常见原型方法"></a>javascript数组常见原型方法</h2><h3 id="Array-indexOf-amp-Array-includes"><a href="#Array-indexOf-amp-Array-includes" class="headerlink" title="Array.indexOf&amp;Array.includes"></a>Array.indexOf&amp;Array.includes</h3><p>Array.indexOf返回的是位置的index,Array.includes返回boolean</p>
+        <h2 id="javascript数组常见原型方法"><a href="#javascript数组常见原型方法" class="headerlink" title="javascript数组常见原型方法"></a>javascript数组常见原型方法</h2><h3 id="prototype-call-amp-amp-apply"><a href="#prototype-call-amp-amp-apply" class="headerlink" title="prototype,call&amp;&amp;apply"></a>prototype,call&amp;&amp;apply</h3><ol>
+<li>prototype是函数的一个属性，并且是函数的原型对象。引用它的必然是函数<br>Array.prototype是一个数组<br>String.prototype是一个字符串<br>Object.prototype是一个对象</li>
+<li>prototype的应用<br> 2.1 原形对象增加公有属性<br> 2.2 原形对象增加公有函数<br> 2.3 实现原形继承<br>slice() 方法返回一个新的数组对象，这一对象是一个由 begin和 end（不包括end）决定的原数组的浅拷贝。原始数组不会被改变<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// 经典例子(从第二个实参数开始获取func函数的实参)</div><div class="line">function func()&#123;</div><div class="line">var args = Array.prototype.slice.call(arguments, 1);</div><div class="line">return args;</div><div class="line">&#125;</div><div class="line">alert(func(0,1,2,3,4));//给func函数传实参</div><div class="line"></div><div class="line">3. call()允许为不同的对象分配和调用属于一个对象的函数/方法。</div><div class="line">call()提供新的 this 值给当前调用的函数/方法。</div><div class="line">你可以使用call来实现继承：写一个方法，然后让另外一个新的对象来继承它（而不是在新对象中再写一次这个方法）。</div><div class="line">使用call方法防止调用对象的原型方法被改变</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="Array-indexOf-amp-Array-includes"><a href="#Array-indexOf-amp-Array-includes" class="headerlink" title="Array.indexOf&amp;Array.includes"></a>Array.indexOf&amp;Array.includes</h3><p>Array.indexOf返回的是位置的index,Array.includes返回boolean</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">const characters = [0,1,2,3];</div><div class="line"></div><div class="line">console.log(characters.indexOf(0));</div><div class="line">// 0</div><div class="line">console.log(characters.includes(0));</div><div class="line">// true</div></pre></td></tr></table></figure>
-<h3 id="Array-forEach-s"><a href="#Array-forEach-s" class="headerlink" title="Array.forEach(s)"></a>Array.forEach(s)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">const a = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;];</div><div class="line"></div><div class="line">a.forEach(function(element) &#123;</div><div class="line">    console.log(element);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="Array-forEach-s"><a href="#Array-forEach-s" class="headerlink" title="Array.forEach(s)"></a>Array.forEach(s)</h3><p>包含异步操作时，await和async无效，可改用for(item of items){}实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">const a = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;];</div><div class="line"></div><div class="line">a.forEach(function(element) &#123;</div><div class="line">    console.log(element);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 <h3 id="Array-some-amp-Array-filter-amp-Array-find"><a href="#Array-some-amp-Array-filter-amp-Array-find" class="headerlink" title="Array.some()&amp;Array.filter()&amp;Array.find()"></a>Array.some()&amp;Array.filter()&amp;Array.find()</h3><p>数组是否含有某元素，，数组含有该元素的唯一记录，，数组含有该元素的记录</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">const character = [</div><div class="line">  &#123; id: 1, name: &apos;ironman&apos;, env: &apos;marvel&apos; &#125;,</div><div class="line">  &#123; id: 2, name: &apos;black_widow&apos;, env: &apos;marvel&apos; &#125;,</div><div class="line">  &#123; id: 3, name: &apos;wonder_woman&apos;, env: &apos;dc_comics&apos; &#125;,</div><div class="line">];</div><div class="line"></div><div class="line">function hasCharacterFrom(env) &#123;</div><div class="line">  return character =&gt; character.env === env;</div><div class="line">&#125;</div><div class="line"></div><div class="line">console.log(character.some(hasCharacterFrom(&apos;marvel&apos;)));</div><div class="line">// true</div><div class="line"></div><div class="line">console.log(character.find(hasCharacterFrom(&apos;marvel&apos;)));</div><div class="line">// &#123; id: 1, name: &apos;ironman&apos;, env: &apos;marvel&apos; &#125; (找到一个就停)</div><div class="line"></div><div class="line">console.log(character.filter(hasCharacterFrom(&apos;marvel&apos;)));</div><div class="line">// [&#123; id: 1, name: &apos;ironman&apos;, env: &apos;marvel&apos; &#125;,&#123; id: 2, name: &apos;black_widow&apos;, env: &apos;marvel&apos; &#125;]</div></pre></td></tr></table></figure>
 <h3 id="Array-map的用法"><a href="#Array-map的用法" class="headerlink" title="Array.map的用法"></a>Array.map的用法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">newArray = Array.map((value)=&gt;&#123;return value+1&#125;);</div></pre></td></tr></table></figure>
@@ -493,7 +498,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -515,7 +520,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -555,7 +560,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#javascript数组常见原型方法"><span class="nav-number">1.</span> <span class="nav-text">javascript数组常见原型方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-indexOf-amp-Array-includes"><span class="nav-number">1.1.</span> <span class="nav-text">Array.indexOf&Array.includes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-forEach-s"><span class="nav-number">1.2.</span> <span class="nav-text">Array.forEach(s)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-some-amp-Array-filter-amp-Array-find"><span class="nav-number">1.3.</span> <span class="nav-text">Array.some()&Array.filter()&Array.find()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-map的用法"><span class="nav-number">1.4.</span> <span class="nav-text">Array.map的用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-reduce的用法"><span class="nav-number">1.5.</span> <span class="nav-text">Array.reduce的用法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#javascript数组常见原型方法"><span class="nav-number">1.</span> <span class="nav-text">javascript数组常见原型方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#prototype-call-amp-amp-apply"><span class="nav-number">1.1.</span> <span class="nav-text">prototype,call&&apply</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-indexOf-amp-Array-includes"><span class="nav-number">1.2.</span> <span class="nav-text">Array.indexOf&Array.includes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-forEach-s"><span class="nav-number">1.3.</span> <span class="nav-text">Array.forEach(s)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-some-amp-Array-filter-amp-Array-find"><span class="nav-number">1.4.</span> <span class="nav-text">Array.some()&Array.filter()&Array.find()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-map的用法"><span class="nav-number">1.5.</span> <span class="nav-text">Array.map的用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-reduce的用法"><span class="nav-number">1.6.</span> <span class="nav-text">Array.reduce的用法</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -575,7 +580,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

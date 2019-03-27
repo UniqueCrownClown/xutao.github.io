@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="vuex专为 Vue.js 应用程序开发的状态管理模式 组件的共享状态抽取出来,以一个全局单例模式管理, 能在全局往所有的组件注入数据  single组件可以抽出来，多个不同组件用同一个数据源(集中式状态管理) SPA（单页应用程序） vuex：规范组件中数据流动，主要用于异步的http请求后数据的刷新。通过官方的vue-devtools可以无缝对接  - state: - mutations:">
+<meta name="description" content="vue-routervue-router 默认的hash模式和history模式的区别 用history模式没有#,会和后台的接口耦合在一起 充分利用了history.pushState API来完成URL的跳转 服务端增加一个覆盖所有情况的候选资源：如果 URL 匹配不到任何静态资源，则应该返回同一个 index.html 页面 这么做以后，你的服务器就不再返回 404 错误页面，因为对于所有路">
 <meta name="keywords" content="vue简单笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue简单笔记">
 <meta property="og:url" content="https://uniquecrownclown.github.io/2018/09/07/knowledge/vue简单笔记/index.html">
 <meta property="og:site_name" content="uniquecrownclown">
-<meta property="og:description" content="vuex专为 Vue.js 应用程序开发的状态管理模式 组件的共享状态抽取出来,以一个全局单例模式管理, 能在全局往所有的组件注入数据  single组件可以抽出来，多个不同组件用同一个数据源(集中式状态管理) SPA（单页应用程序） vuex：规范组件中数据流动，主要用于异步的http请求后数据的刷新。通过官方的vue-devtools可以无缝对接  - state: - mutations:">
+<meta property="og:description" content="vue-routervue-router 默认的hash模式和history模式的区别 用history模式没有#,会和后台的接口耦合在一起 充分利用了history.pushState API来完成URL的跳转 服务端增加一个覆盖所有情况的候选资源：如果 URL 匹配不到任何静态资源，则应该返回同一个 index.html 页面 这么做以后，你的服务器就不再返回 404 错误页面，因为对于所有路">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-14T03:46:50.430Z">
+<meta property="og:updated_time" content="2019-03-08T07:27:20.429Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue简单笔记">
-<meta name="twitter:description" content="vuex专为 Vue.js 应用程序开发的状态管理模式 组件的共享状态抽取出来,以一个全局单例模式管理, 能在全局往所有的组件注入数据  single组件可以抽出来，多个不同组件用同一个数据源(集中式状态管理) SPA（单页应用程序） vuex：规范组件中数据流动，主要用于异步的http请求后数据的刷新。通过官方的vue-devtools可以无缝对接  - state: - mutations:">
+<meta name="twitter:description" content="vue-routervue-router 默认的hash模式和history模式的区别 用history模式没有#,会和后台的接口耦合在一起 充分利用了history.pushState API来完成URL的跳转 服务端增加一个覆盖所有情况的候选资源：如果 URL 匹配不到任何静态资源，则应该返回同一个 index.html 页面 这么做以后，你的服务器就不再返回 404 错误页面，因为对于所有路">
 
 
 
@@ -354,7 +354,12 @@
       
 
       
-        <h3 id="vuex"><a href="#vuex" class="headerlink" title="vuex"></a>vuex</h3><pre><code>专为 Vue.js 应用程序开发的状态管理模式
+        <h3 id="vue-router"><a href="#vue-router" class="headerlink" title="vue-router"></a>vue-router</h3><pre><code>vue-router 默认的hash模式和history模式的区别
+用history模式没有#,会和后台的接口耦合在一起
+充分利用了history.pushState API来完成URL的跳转
+服务端增加一个覆盖所有情况的候选资源：如果 URL 匹配不到任何静态资源，则应该返回同一个 index.html 页面
+这么做以后，你的服务器就不再返回 404 错误页面，因为对于所有路径都会返回 index.html 文件。为了避免这种情况，你应该在 Vue 应用里面覆盖所有的路由情况，然后在给出一个 404 页面。
+</code></pre><h3 id="vuex"><a href="#vuex" class="headerlink" title="vuex"></a>vuex</h3><pre><code>专为 Vue.js 应用程序开发的状态管理模式
 组件的共享状态抽取出来,以一个全局单例模式管理, 能在全局往所有的组件注入数据
 
 single组件可以抽出来，多个不同组件用同一个数据源(集中式状态管理)
@@ -374,7 +379,15 @@ vuex：规范组件中数据流动，主要用于异步的http请求后数据的
 
 Getter 就是把组件中共有的对state 的操作进行了提取，它就相当于 对state 的computed. 所以它会获得state 作为第一个参数。
 (也可以不用getter，那么在每個組件需要的state的加工后操作返回值時，都需要在各自的computed中进行处理，这不就重复么)
-</code></pre><h3 id="vueSSR"><a href="#vueSSR" class="headerlink" title="vueSSR"></a>vueSSR</h3>
+</code></pre><h3 id="常见常用点"><a href="#常见常用点" class="headerlink" title="常见常用点"></a>常见常用点</h3><ol>
+<li><p>如果是得到state还需要进一步操作filter，在getter中完成，，减少view或者是component的代码量</p>
+</li>
+<li><p>mutation保证是纯函数，，在action中用commit的方式去添加处理逻辑</p>
+</li>
+<li><p>rqrfqrfqfrf</p>
+</li>
+</ol>
+
       
     </div>
     
@@ -493,7 +506,7 @@ Getter 就是把组件中共有的对state 的操作进行了提取，它就相�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -515,7 +528,7 @@ Getter 就是把组件中共有的对state 的操作进行了提取，它就相�
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -555,7 +568,7 @@ Getter 就是把组件中共有的对state 的操作进行了提取，它就相�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#vuex"><span class="nav-number">1.</span> <span class="nav-text">vuex</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vueSSR"><span class="nav-number">2.</span> <span class="nav-text">vueSSR</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#vue-router"><span class="nav-number">1.</span> <span class="nav-text">vue-router</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vuex"><span class="nav-number">2.</span> <span class="nav-text">vuex</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见常用点"><span class="nav-number">3.</span> <span class="nav-text">常见常用点</span></a></li></ol></div>
             
 
           </div>
@@ -575,7 +588,7 @@ Getter 就是把组件中共有的对state 的操作进行了提取，它就相�
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

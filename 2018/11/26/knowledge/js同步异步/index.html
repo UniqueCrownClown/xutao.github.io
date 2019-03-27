@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="generator&yield,js同步异步," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="uniquecrownclown" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="promise 基础用用  1234567891011new promise((resolve,reject)=&amp;gt;&amp;#123;if(ss)&amp;#123;	resolve(&amp;apos;apple&amp;apos;)	&amp;#125;else&amp;#123;	reject(&amp;apos;peach&amp;apos;)	&amp;#125;&amp;#125;).then(result=&amp;gt;&amp;#123;console.log(res">
+<meta name="keywords" content="generator&amp;yield,js同步异步">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js同步异步">
+<meta property="og:url" content="https://uniquecrownclown.github.io/2018/11/26/knowledge/js同步异步/index.html">
+<meta property="og:site_name" content="uniquecrownclown">
+<meta property="og:description" content="promise 基础用用  1234567891011new promise((resolve,reject)=&amp;gt;&amp;#123;if(ss)&amp;#123;	resolve(&amp;apos;apple&amp;apos;)	&amp;#125;else&amp;#123;	reject(&amp;apos;peach&amp;apos;)	&amp;#125;&amp;#125;).then(result=&amp;gt;&amp;#123;console.log(res">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-03-27T03:04:48.096Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js同步异步">
+<meta name="twitter:description" content="promise 基础用用  1234567891011new promise((resolve,reject)=&amp;gt;&amp;#123;if(ss)&amp;#123;	resolve(&amp;apos;apple&amp;apos;)	&amp;#125;else&amp;#123;	reject(&amp;apos;peach&amp;apos;)	&amp;#125;&amp;#125;).then(result=&amp;gt;&amp;#123;console.log(res">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://uniquecrownclown.github.io/2018/11/26/knowledge/js同步异步/"/>
+
+
+
+
+
+  <title>js同步异步 | uniquecrownclown</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">uniquecrownclown</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">clown的笔记</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://uniquecrownclown.github.io/2018/11/26/knowledge/js同步异步/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="clown">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="uniquecrownclown">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">js同步异步</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-26T09:34:57+08:00">
+                2018-11-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/知识笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">知识笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h3><ol>
+<li><p>基础用用</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">new promise((resolve,reject)=&gt;&#123;</div><div class="line">if(ss)&#123;</div><div class="line">	resolve(&apos;apple&apos;)</div><div class="line">	&#125;else&#123;</div><div class="line">	reject(&apos;peach&apos;)</div><div class="line">	&#125;</div><div class="line">&#125;).then(result=&gt;&#123;</div><div class="line">console.log(result) // apple</div><div class="line">&#125;).catch(reason=&gt;&#123;</div><div class="line">console.log(reason) //peach</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>promise all()的用法</p>
+</li>
+</ol>
+<h3 id="await和async"><a href="#await和async" class="headerlink" title="await和async"></a>await和async</h3><p>在forEach中存在异步操作时用await和async时有问题，改用for(item of items)实现</p>
+<h3 id="generator-amp-yield"><a href="#generator-amp-yield" class="headerlink" title="generator&amp;yield"></a>generator&amp;yield</h3><p>function* 这种声明方式(function关键字后跟一个星号）会定义一个生成器函数 (generator function)，它返回一个  Generator  对象。<br>es6关于yield和next的用法</p>
+<ol>
+<li><p>接收参数</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function* idMaker()&#123;</div><div class="line">   var index = arguments[0] || 0;</div><div class="line">   while(true)</div><div class="line">       yield index++;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var gen = idMaker(5);</div><div class="line">console.log(gen.next().value); // 5</div><div class="line">console.log(gen.next().value); // 6</div></pre></td></tr></table></figure>
+</li>
+<li><p>yield* 示例</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">function* anotherGenerator(i) &#123;</div><div class="line">  yield i + 1;</div><div class="line">  yield i + 2;</div><div class="line">  yield i + 3;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function* generator(i)&#123;</div><div class="line">  yield i;</div><div class="line">  yield* anotherGenerator(i);// 移交执行权</div><div class="line">  yield i + 10;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var gen = generator(10);</div><div class="line"></div><div class="line">console.log(gen.next().value); // 10</div><div class="line">console.log(gen.next().value); // 11</div><div class="line">console.log(gen.next().value); // 12</div><div class="line">console.log(gen.next().value); // 13</div><div class="line">console.log(gen.next().value); // 20</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol>
+<li>generator函数中有return<br>当在生成器函数中显式 return 时，会导致生成器立即变为完成状态，即调用 next() 方法返回的对象的 done 为 true。<br>如果 return 后面跟了一个值，那么这个值会作为当前调用 next() 方法返回的 value 值。再调用next()就不执行了</li>
+</ol>
+<ol>
+<li><p>使用迭代器遍历二维数组并赋给一维数组</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">function* iterArr(arr) &#123;            //迭代器返回一个迭代器对象</div><div class="line">  if (Array.isArray(arr)) &#123;         // 内节点</div><div class="line">	  for(let i=0; i &lt; arr.length; i++) &#123;</div><div class="line">		  yield* iterArr(arr[i]);   // (*)递归</div><div class="line">	  &#125;</div><div class="line">  &#125; else &#123;                          // 离开     </div><div class="line">	  yield arr;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">// 使用 for-of 遍历:</div><div class="line">var arr = [&apos;a&apos;, [&apos;b&apos;, &apos;c&apos;], [&apos;d&apos;, &apos;e&apos;]];</div><div class="line">for(var x of iterArr(arr)) &#123;</div><div class="line">		console.log(x);               // a  b  c  d  e</div><div class="line"> &#125;</div><div class="line"></div><div class="line">// 或者直接将迭代器展开:</div><div class="line">var arr = [ &apos;a&apos;, [&apos;b&apos;,[ &apos;c&apos;, [&apos;d&apos;, &apos;e&apos;]]]];</div><div class="line">var gen = iterArr(arr);</div><div class="line">arr = [...gen];</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="generator-amp-amp-async和await"><a href="#generator-amp-amp-async和await" class="headerlink" title="generator&amp;&amp;async和await"></a>generator&amp;&amp;async和await</h3><p>ES2017 标准引入了 async 函数,在异步处理上，async 函数就是 Generator 函数的语法糖。</p>
+<p>顺序执行和异步执行</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//顺序执行</span></div><div class="line">(<span class="keyword">async</span> () =&gt; &#123;</div><div class="line">  <span class="keyword">const</span> getList = <span class="keyword">await</span> getList();</div><div class="line">  <span class="keyword">const</span> getAnotherList = <span class="keyword">await</span> getAnotherList();</div><div class="line">&#125;)();</div><div class="line"><span class="comment">//异步执行(方法1)</span></div><div class="line">(<span class="keyword">async</span> () =&gt; &#123;</div><div class="line">  <span class="keyword">const</span> listPromise = getList();</div><div class="line">  <span class="keyword">const</span> anotherListPromise = getAnotherList();</div><div class="line">  <span class="keyword">await</span> listPromise;</div><div class="line">  <span class="keyword">await</span> anotherListPromise;</div><div class="line">&#125;)();</div><div class="line"><span class="comment">//异步执行(方法2)</span></div><div class="line">(<span class="keyword">async</span> () =&gt; &#123;</div><div class="line">  <span class="built_in">Promise</span>.all([getList(), getAnotherList()]).then(...);</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<p>问题：给定一个 URL 数组，如何实现接口的继发和并发？</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 继发一</span></div><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">loadData</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> res1 = <span class="keyword">await</span> fetch(url1);</div><div class="line">  <span class="keyword">var</span> res2 = <span class="keyword">await</span> fetch(url2);</div><div class="line">  <span class="keyword">var</span> res3 = <span class="keyword">await</span> fetch(url3);</div><div class="line">  <span class="keyword">return</span> <span class="string">"whew all done"</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">// 继发二</span></div><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">loadData</span>(<span class="params">urls</span>) </span>&#123;</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> url <span class="keyword">of</span> urls) &#123;</div><div class="line">    <span class="keyword">const</span> response = <span class="keyword">await</span> fetch(url);</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">await</span> response.text());</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 并发一</span></div><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">loadData</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> res = <span class="keyword">await</span> <span class="built_in">Promise</span>.all([fetch(url1), fetch(url2), fetch(url3)]);</div><div class="line">  <span class="keyword">return</span> <span class="string">"whew all done"</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">// 并发二</span></div><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">loadData</span>(<span class="params">urls</span>) </span>&#123;</div><div class="line">  <span class="comment">// 并发读取 url</span></div><div class="line">  <span class="keyword">const</span> textPromises = urls.map(<span class="keyword">async</span> url =&gt; &#123;</div><div class="line">    <span class="keyword">const</span> response = <span class="keyword">await</span> fetch(url);</div><div class="line">    <span class="keyword">return</span> response.text();</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  <span class="comment">// 按次序输出</span></div><div class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> textPromise <span class="keyword">of</span> textPromises) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">await</span> textPromise);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>async 错误捕获<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//写法1</span></div><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">asyncTask</span>(<span class="params">cb</span>) </span>&#123;</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">       <span class="keyword">const</span> user = <span class="keyword">await</span> UserModel.findById(<span class="number">1</span>);</div><div class="line">       <span class="keyword">if</span>(!user) <span class="keyword">return</span> cb(<span class="string">'No user found'</span>);</div><div class="line">    &#125; <span class="keyword">catch</span>(e) &#123;</div><div class="line">        <span class="keyword">return</span> cb(<span class="string">'Unexpected error occurred'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//写法2</span></div><div class="line"></div><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">asyncTask</span>(<span class="params">cb</span>) </span>&#123;</div><div class="line">  <span class="keyword">const</span> [err,user] = <span class="keyword">await</span> UserModel.findById(<span class="number">1</span>);</div><div class="line">  <span class="keyword">if</span>(!user) <span class="keyword">throw</span> <span class="keyword">new</span> CustomerError(<span class="string">'No user found'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// to.js</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">to</span>(<span class="params">promise</span>) </span>&#123;</div><div class="line">   <span class="keyword">return</span> promise.then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</div><div class="line">      <span class="keyword">return</span> [<span class="literal">null</span>, data];</div><div class="line">   &#125;)</div><div class="line">   .catch(<span class="function"><span class="params">err</span> =&gt;</span> [err]);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/generator-yield/" rel="tag"># generator&yield</a>
+          
+            <a href="/tags/js同步异步/" rel="tag"># js同步异步</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/23/knowledge/token认证/" rel="next" title="token认证">
+                <i class="fa fa-chevron-left"></i> token认证
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/26/knowledge/react/" rel="prev" title="react学习笔记">
+                react学习笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">clown</p>
+              <p class="site-description motion-element" itemprop="description">旭日照原野，万物皆欣荣</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#promise"><span class="nav-number">1.</span> <span class="nav-text">promise</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#await和async"><span class="nav-number">2.</span> <span class="nav-text">await和async</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#generator-amp-yield"><span class="nav-number">3.</span> <span class="nav-text">generator&yield</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#generator-amp-amp-async和await"><span class="nav-number">4.</span> <span class="nav-text">generator&&async和await</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">clown</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

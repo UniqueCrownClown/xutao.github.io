@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="uniquecrownclown">
 <meta property="og:description" content="字符串变量扩展运算符 不定参数长度es5实现不定参数123456789101112//在以往，我们给函数传不确定参数数量时，是通过arguments来获取的function sum() &amp;#123;  console.log(arguments) // &amp;#123; &amp;apos;0&amp;apos;: 1, &amp;apos;1&amp;apos;: 2, &amp;apos;2&amp;apos;: 3, &amp;apos;3&amp;apos">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-14T08:14:14.204Z">
+<meta property="og:updated_time" content="2019-03-27T03:06:12.990Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="es6语法笔记">
 <meta name="twitter:description" content="字符串变量扩展运算符 不定参数长度es5实现不定参数123456789101112//在以往，我们给函数传不确定参数数量时，是通过arguments来获取的function sum() &amp;#123;  console.log(arguments) // &amp;#123; &amp;apos;0&amp;apos;: 1, &amp;apos;1&amp;apos;: 2, &amp;apos;2&amp;apos;: 3, &amp;apos;3&amp;apos">
@@ -360,11 +360,15 @@
 </ol>
 <p>es6实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// 接下来我们用扩展运算符看看</div><div class="line">function sum(...args)&#123; // 使用...扩展运算符</div><div class="line">    console.log(args) // [ 1, 2, 3, 4, 5, 6 ] args是一个数组</div><div class="line">    return eval(args.join(&apos;+&apos;))</div><div class="line">&#125;</div><div class="line"></div><div class="line">console.log(sum(1,2,3,4,5,6)) // 21</div></pre></td></tr></table></figure></p>
 <ol>
-<li>连接数组和对象<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">let arr1 = [1,2,3]</div><div class="line">let arr2 = [4,5,6]</div><div class="line">let arr3 = [...arr1,...arr2]</div><div class="line"></div><div class="line">// 使用扩展运算符</div><div class="line">let name = &#123; name:&quot;邵威儒&quot; &#125;</div><div class="line">let age = &#123; age:28 &#125;</div><div class="line">let person = &#123;...name,...age&#125;</div></pre></td></tr></table></figure>
+<li><p>连接数组和对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">let arr1 = [1,2,3]</div><div class="line">let arr2 = [4,5,6]</div><div class="line">let arr3 = [...arr1,...arr2]</div><div class="line"></div><div class="line">// 使用扩展运算符</div><div class="line">let name = &#123; name:&quot;邵威儒&quot; &#125;</div><div class="line">let age = &#123; age:28 &#125;</div><div class="line">let person = &#123;...name,...age&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>复制和合并对象,对象重复以后面的为主，相当于重写(属于修改原对象类型的function)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var obj = &#123; a: 1 &#125;;</div><div class="line">var obj2 = &#123; b: 2 &#125;;</div><div class="line">var copy = Object.assign(&#123;&#125;, obj);</div><div class="line">var copy2 = Object.assign(obj,obj2);</div><div class="line">console.log(copy); // &#123; a: 1 &#125;</div><div class="line">console.log(copy2); //  &#123; a: 1 ,b: 2 &#125;</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <h3 id="Object-defineProperty"><a href="#Object-defineProperty" class="headerlink" title="Object.defineProperty"></a>Object.defineProperty</h3><p>能实现数据双向绑定</p>
-<h3 id="generator-amp-amp-async和await"><a href="#generator-amp-amp-async和await" class="headerlink" title="generator&amp;&amp;async和await"></a>generator&amp;&amp;async和await</h3>
+
       
     </div>
     
@@ -483,7 +487,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -505,7 +509,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -545,7 +549,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串变量"><span class="nav-number">1.</span> <span class="nav-text">字符串变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#扩展运算符"><span class="nav-number">2.</span> <span class="nav-text">扩展运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-defineProperty"><span class="nav-number">3.</span> <span class="nav-text">Object.defineProperty</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#generator-amp-amp-async和await"><span class="nav-number">4.</span> <span class="nav-text">generator&&async和await</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串变量"><span class="nav-number">1.</span> <span class="nav-text">字符串变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#扩展运算符"><span class="nav-number">2.</span> <span class="nav-text">扩展运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-defineProperty"><span class="nav-number">3.</span> <span class="nav-text">Object.defineProperty</span></a></li></ol></div>
             
 
           </div>
@@ -565,7 +569,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
