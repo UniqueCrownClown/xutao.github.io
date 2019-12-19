@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="常见排序算法时间和空间复杂度">
+<meta name="description" content="常见排序算法时间和空间复杂度 两数之和123456789var twoSum = function(nums, target) &amp;#123;    for(let i=0;i&amp;lt;nums.length-1;i++)&amp;#123;        for(let j = i+1;j&amp;lt;nums.length;j++)&amp;#123;            if(num[i]+ num[j]=== t">
 <meta name="keywords" content="常见算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="常见算法知识">
-<meta property="og:url" content="https://uniquecrownclown.github.io/2018/09/06/knowledge/常见算法知识/index.html">
+<meta property="og:url" content="https://uniquecrownclown.github.io/blog/2018/09/06/knowledge/常见算法知识/index.html">
 <meta property="og:site_name" content="uniquecrownclown">
-<meta property="og:description" content="常见排序算法时间和空间复杂度">
+<meta property="og:description" content="常见排序算法时间和空间复杂度 两数之和123456789var twoSum = function(nums, target) &amp;#123;    for(let i=0;i&amp;lt;nums.length-1;i++)&amp;#123;        for(let j = i+1;j&amp;lt;nums.length;j++)&amp;#123;            if(num[i]+ num[j]=== t">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-13T00:50:19.019Z">
+<meta property="og:updated_time" content="2019-12-06T03:19:58.214Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常见算法知识">
-<meta name="twitter:description" content="常见排序算法时间和空间复杂度">
+<meta name="twitter:description" content="常见排序算法时间和空间复杂度 两数之和123456789var twoSum = function(nums, target) &amp;#123;    for(let i=0;i&amp;lt;nums.length-1;i++)&amp;#123;        for(let j = i+1;j&amp;lt;nums.length;j++)&amp;#123;            if(num[i]+ num[j]=== t">
 
 
 
@@ -122,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="https://uniquecrownclown.github.io/2018/09/06/knowledge/常见算法知识/">
+  <link rel="canonical" href="https://uniquecrownclown.github.io/blog/2018/09/06/knowledge/常见算法知识/">
 
 
 
@@ -265,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://uniquecrownclown.github.io/2018/09/06/knowledge/常见算法知识/">
+    <link itemprop="mainEntityOfPage" href="https://uniquecrownclown.github.io/blog/2018/09/06/knowledge/常见算法知识/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="clown">
@@ -354,7 +354,16 @@
       
 
       
-        <h3 id="常见排序算法"><a href="#常见排序算法" class="headerlink" title="常见排序算法"></a>常见排序算法</h3><h3 id="时间和空间复杂度"><a href="#时间和空间复杂度" class="headerlink" title="时间和空间复杂度"></a>时间和空间复杂度</h3>
+        <h3 id="常见排序算法"><a href="#常见排序算法" class="headerlink" title="常见排序算法"></a>常见排序算法</h3><h3 id="时间和空间复杂度"><a href="#时间和空间复杂度" class="headerlink" title="时间和空间复杂度"></a>时间和空间复杂度</h3><ol>
+<li>两数之和<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var twoSum = function(nums, target) &#123;</span><br><span class="line">    for(let i=0;i&lt;nums.length-1;i++)&#123;</span><br><span class="line">        for(let j = i+1;j&lt;nums.length;j++)&#123;</span><br><span class="line">            if(num[i]+ num[j]=== target)&#123;</span><br><span class="line">                return [nums[i], nums[j]]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>时间复杂度—O(n2)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var twoSum = function(nums, target) &#123;</span><br><span class="line">let res = &#123;&#125;;</span><br><span class="line">for( let i = 0;i &lt; nums.length; i++)&#123;</span><br><span class="line">    res[target- nums[i]] = nums[i];</span><br><span class="line">&#125;</span><br><span class="line"> for (let j = 0; j &lt; nums.length; j++) &#123;</span><br><span class="line">     &lt;!-- if(nums[j] === res[j])&#123;</span><br><span class="line">         return [nums[j],target-num[j]]</span><br><span class="line">     &#125; --&gt;</span><br><span class="line">     if(res[num[j]] !== undefined)&#123;</span><br><span class="line">         return [nums[j], res[nums[j]]]</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度— O(n)<br>空间复杂度— O(n)</p>
+
       
     </div>
     
@@ -473,7 +482,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -495,7 +504,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
