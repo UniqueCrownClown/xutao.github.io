@@ -85,11 +85,11 @@
 <meta name="keywords" content="es6简单笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="es6语法笔记">
-<meta property="og:url" content="https://uniquecrownclown.github.io/blog/2018/09/13/knowledge/es6语法笔记/index.html">
+<meta property="og:url" content="https://uniquecrownclown.github.io/2018/09/13/knowledge/es6语法笔记/index.html">
 <meta property="og:site_name" content="uniquecrownclown">
 <meta property="og:description" content="字符串变量扩展运算符 不定参数长度es5实现不定参数123456789101112//在以往，我们给函数传不确定参数数量时，是通过arguments来获取的function sum() &amp;#123;  console.log(arguments) // &amp;#123; &amp;apos;0&amp;apos;: 1, &amp;apos;1&amp;apos;: 2, &amp;apos;2&amp;apos;: 3, &amp;apos;3&amp;apos">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-29T06:01:47.012Z">
+<meta property="og:updated_time" content="2020-03-10T07:27:10.743Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="es6语法笔记">
 <meta name="twitter:description" content="字符串变量扩展运算符 不定参数长度es5实现不定参数123456789101112//在以往，我们给函数传不确定参数数量时，是通过arguments来获取的function sum() &amp;#123;  console.log(arguments) // &amp;#123; &amp;apos;0&amp;apos;: 1, &amp;apos;1&amp;apos;: 2, &amp;apos;2&amp;apos;: 3, &amp;apos;3&amp;apos">
@@ -122,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="https://uniquecrownclown.github.io/blog/2018/09/13/knowledge/es6语法笔记/">
+  <link rel="canonical" href="https://uniquecrownclown.github.io/2018/09/13/knowledge/es6语法笔记/">
 
 
 
@@ -265,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://uniquecrownclown.github.io/blog/2018/09/13/knowledge/es6语法笔记/">
+    <link itemprop="mainEntityOfPage" href="https://uniquecrownclown.github.io/2018/09/13/knowledge/es6语法笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="clown">
@@ -372,15 +372,18 @@
 </li>
 </ol>
 <h3 id="Object-defineProperty"><a href="#Object-defineProperty" class="headerlink" title="Object.defineProperty"></a>Object.defineProperty</h3><p>能实现数据双向绑定</p>
-<h3 id="javascript数组常见原型方法"><a href="#javascript数组常见原型方法" class="headerlink" title="javascript数组常见原型方法"></a>javascript数组常见原型方法</h3><h4 id="prototype-call-amp-amp-apply"><a href="#prototype-call-amp-amp-apply" class="headerlink" title="prototype,call&amp;&amp;apply"></a>prototype,call&amp;&amp;apply</h4><ol>
+<h3 id="prototype-call-amp-amp-apply"><a href="#prototype-call-amp-amp-apply" class="headerlink" title="prototype,call&amp;&amp;apply"></a>prototype,call&amp;&amp;apply</h3><ol>
 <li>prototype是函数的一个属性，并且是函数的原型对象。引用它的必然是函数<br>Array.prototype是一个数组<br>String.prototype是一个字符串<br>Object.prototype是一个对象</li>
 <li>prototype的应用<br> 2.1 原形对象增加公有属性<br> 2.2 原形对象增加公有函数<br> 2.3 实现原形继承<br>slice() 方法返回一个新的数组对象，这一对象是一个由 begin和 end（不包括end）决定的原数组的浅拷贝。原始数组不会被改变<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 经典例子(从第二个实参数开始获取func函数的实参)</span><br><span class="line">function func()&#123;</span><br><span class="line">var args = Array.prototype.slice.call(arguments, 1);</span><br><span class="line">return args;</span><br><span class="line">&#125;</span><br><span class="line">alert(func(0,1,2,3,4));//给func函数传实参</span><br><span class="line"></span><br><span class="line">3. call()允许为不同的对象分配和调用属于一个对象的函数/方法。</span><br><span class="line">call()提供新的 this 值给当前调用的函数/方法。</span><br><span class="line">你可以使用call来实现继承：写一个方法，然后让另外一个新的对象来继承它（而不是在新对象中再写一次这个方法）。</span><br><span class="line">使用call方法防止调用对象的原型方法被改变</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
+<h3 id="javascript数组常见原型方法"><a href="#javascript数组常见原型方法" class="headerlink" title="javascript数组常见原型方法"></a>javascript数组常见原型方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">map():返回一个新的Array，每个元素为调用func的结果。新数组的长度和原来的是一样的，他只不过是逐一对原来数据里的每个元素进行操作。</span><br><span class="line">filter():返回一个符合func条件的元素数组。筛选条件，把数组符合条件的放在新的数组里面返回。新数组和原来的数组长度不一定一样。</span><br><span class="line">some():返回一个boolean，判断是否有元素是否符合func条件。数组里面所有的元素有一个符合条件就返回true。</span><br><span class="line">every():返回一个boolean，判断每个元素是否符合func条件。数组里面所有的元素都符合才返回true。</span><br><span class="line">forEach():没有返回值，只是针对每个元素调用func   。循环数组。和for的用法一样的。</span><br></pre></td></tr></table></figure>
+
 <h4 id="Array-indexOf-amp-Array-includes"><a href="#Array-indexOf-amp-Array-includes" class="headerlink" title="Array.indexOf&amp;Array.includes"></a>Array.indexOf&amp;Array.includes</h4><p>Array.indexOf返回的是位置的index,Array.includes返回boolean</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const characters = [0,1,2,3];</span><br><span class="line"></span><br><span class="line">console.log(characters.indexOf(0));</span><br><span class="line">// 0</span><br><span class="line">console.log(characters.includes(0));</span><br><span class="line">// true</span><br></pre></td></tr></table></figure>
 
+<h4 id="Array-from-new-Set-new-Array"><a href="#Array-from-new-Set-new-Array" class="headerlink" title="Array.from(new Set(new Array()))"></a>Array.from(new Set(new Array()))</h4><p>数组去重并转为可做遍历操作的数组对象</p>
 <h4 id="Array-forEach-s"><a href="#Array-forEach-s" class="headerlink" title="Array.forEach(s)"></a>Array.forEach(s)</h4><p>包含异步操作时，await和async无效，可改用for(item of items){}实现</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const a = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;];</span><br><span class="line"></span><br><span class="line">a.forEach(function(element) &#123;</span><br><span class="line">    console.log(element);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
@@ -567,7 +570,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -629,7 +632,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串变量"><span class="nav-number">1.</span> <span class="nav-text">字符串变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#扩展运算符"><span class="nav-number">2.</span> <span class="nav-text">扩展运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-defineProperty"><span class="nav-number">3.</span> <span class="nav-text">Object.defineProperty</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#javascript数组常见原型方法"><span class="nav-number">4.</span> <span class="nav-text">javascript数组常见原型方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#prototype-call-amp-amp-apply"><span class="nav-number">4.1.</span> <span class="nav-text">prototype,call&amp;&amp;apply</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Array-indexOf-amp-Array-includes"><span class="nav-number">4.2.</span> <span class="nav-text">Array.indexOf&amp;Array.includes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Array-forEach-s"><span class="nav-number">4.3.</span> <span class="nav-text">Array.forEach(s)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Array-some-amp-Array-filter-amp-Array-find"><span class="nav-number">4.4.</span> <span class="nav-text">Array.some()&amp;Array.filter()&amp;Array.find()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Array-map的用法"><span class="nav-number">4.5.</span> <span class="nav-text">Array.map的用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Array-reduce的用法"><span class="nav-number">4.6.</span> <span class="nav-text">Array.reduce的用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Array构建"><span class="nav-number">4.7.</span> <span class="nav-text">Array构建</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#js同步异步"><span class="nav-number">5.</span> <span class="nav-text">js同步异步</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#promise"><span class="nav-number">5.1.</span> <span class="nav-text">promise</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#await和async"><span class="nav-number">5.2.</span> <span class="nav-text">await和async</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#generator-amp-yield"><span class="nav-number">5.3.</span> <span class="nav-text">generator&amp;yield</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#generator-amp-amp-async和await"><span class="nav-number">5.4.</span> <span class="nav-text">generator&amp;&amp;async和await</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串变量"><span class="nav-number">1.</span> <span class="nav-text">字符串变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#扩展运算符"><span class="nav-number">2.</span> <span class="nav-text">扩展运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-defineProperty"><span class="nav-number">3.</span> <span class="nav-text">Object.defineProperty</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#prototype-call-amp-amp-apply"><span class="nav-number">4.</span> <span class="nav-text">prototype,call&amp;&amp;apply</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#javascript数组常见原型方法"><span class="nav-number">5.</span> <span class="nav-text">javascript数组常见原型方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Array-indexOf-amp-Array-includes"><span class="nav-number">5.1.</span> <span class="nav-text">Array.indexOf&amp;Array.includes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Array-from-new-Set-new-Array"><span class="nav-number">5.2.</span> <span class="nav-text">Array.from(new Set(new Array()))</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Array-forEach-s"><span class="nav-number">5.3.</span> <span class="nav-text">Array.forEach(s)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Array-some-amp-Array-filter-amp-Array-find"><span class="nav-number">5.4.</span> <span class="nav-text">Array.some()&amp;Array.filter()&amp;Array.find()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Array-map的用法"><span class="nav-number">5.5.</span> <span class="nav-text">Array.map的用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Array-reduce的用法"><span class="nav-number">5.6.</span> <span class="nav-text">Array.reduce的用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Array构建"><span class="nav-number">5.7.</span> <span class="nav-text">Array构建</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#js同步异步"><span class="nav-number">6.</span> <span class="nav-text">js同步异步</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#promise"><span class="nav-number">6.1.</span> <span class="nav-text">promise</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#await和async"><span class="nav-number">6.2.</span> <span class="nav-text">await和async</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#generator-amp-yield"><span class="nav-number">6.3.</span> <span class="nav-text">generator&amp;yield</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#generator-amp-amp-async和await"><span class="nav-number">6.4.</span> <span class="nav-text">generator&amp;&amp;async和await</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -649,7 +652,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
