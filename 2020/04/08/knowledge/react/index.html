@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="react简单笔记,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="uniquecrownclown" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="react基本概念 Create React App脚手架Create React App搭建单页react工程 1234567891011#### 方法1npx create-react-app my-app  --scripts-version=react-scripts-tsnpx create-react-app my-project --scripts-version=react-scr">
+<meta name="keywords" content="react简单笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react学习笔记">
+<meta property="og:url" content="https://uniquecrownclown.github.io/2020/04/08/knowledge/react/index.html">
+<meta property="og:site_name" content="uniquecrownclown">
+<meta property="og:description" content="react基本概念 Create React App脚手架Create React App搭建单页react工程 1234567891011#### 方法1npx create-react-app my-app  --scripts-version=react-scripts-tsnpx create-react-app my-project --scripts-version=react-scr">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-09-29T05:53:22.504Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="react学习笔记">
+<meta name="twitter:description" content="react基本概念 Create React App脚手架Create React App搭建单页react工程 1234567891011#### 方法1npx create-react-app my-app  --scripts-version=react-scripts-tsnpx create-react-app my-project --scripts-version=react-scr">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://uniquecrownclown.github.io/2020/04/08/knowledge/react/">
+
+
+
+
+
+  <title>react学习笔记 | uniquecrownclown</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">uniquecrownclown</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">clown的笔记</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://uniquecrownclown.github.io/2020/04/08/knowledge/react/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="clown">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="uniquecrownclown">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">react学习笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-08T10:47:58+08:00">
+                2020-04-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/知识笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">知识笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="react基本概念"><a href="#react基本概念" class="headerlink" title="react基本概念"></a>react基本概念</h3><ol>
+<li><p>Create React App脚手架<br>Create React App搭建单页react工程</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#### 方法1</span><br><span class="line">npx create-react-app my-app  --scripts-version=react-scripts-ts</span><br><span class="line">npx create-react-app my-project --scripts-version=react-scripts-ts-antd(antd的ui框架)</span><br><span class="line">cd my-app</span><br><span class="line">npm start</span><br><span class="line">#### 方法2</span><br><span class="line">npm init react-app my-app</span><br><span class="line">yarn create react-app my-app</span><br><span class="line">cd my-app</span><br><span class="line">yarn start</span><br><span class="line">npm run eject 暴露webpack的config,不可逆</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>容器组件和展示组件的区别<br>container文件夹和compoment文件夹</p>
+</li>
+</ol>
+<h3 id="jsx"><a href="#jsx" class="headerlink" title="jsx"></a>jsx</h3><ol>
+<li><p>JSX 代码的外面扩上一个小括号，这样可以防止 分号自动插入 的 bug<br>会带上换行和缩进，这样可以增强代码的可读性<br>JSX 当中的表达式要包含在大括号里<br>React DOM 使用 camelCase 小驼峰命名 来定义属性的名称，而不是使用 HTML 的属性名称<br> class 变成了 className，而 tabindex 则对应着 tabIndex<br>条件渲染和列表渲染</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function NumberList(props) &#123;</span><br><span class="line">  const numbers = props.numbers;</span><br><span class="line">  return (</span><br><span class="line">	&lt;ul&gt;</span><br><span class="line">	  &#123;numbers.map((number) =&gt;</span><br><span class="line">		&lt;ListItem key=&#123;number.toString()&#125;</span><br><span class="line">				  value=&#123;number&#125; /&gt;</span><br><span class="line"></span><br><span class="line">	  )&#125;</span><br><span class="line">	&lt;/ul&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>表单怎么用onchange事件和state实现数据value的控制</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">//受控组件</span><br><span class="line">class NameForm extends React.Component &#123;</span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">	super(props);</span><br><span class="line">	this.state = &#123;value: &apos;&apos;&#125;;</span><br><span class="line"></span><br><span class="line">	this.handleChange = this.handleChange.bind(this);</span><br><span class="line">	this.handleSubmit = this.handleSubmit.bind(this);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handleChange(event) &#123;</span><br><span class="line">	this.setState(&#123;value: event.target.value&#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handleSubmit(event) &#123;</span><br><span class="line">	alert(&apos;A name was submitted: &apos; + this.state.value);</span><br><span class="line">	event.preventDefault();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">	return (</span><br><span class="line">	  &lt;form onSubmit=&#123;this.handleSubmit&#125;&gt;</span><br><span class="line">		&lt;label&gt;</span><br><span class="line">		  Name:</span><br><span class="line">		  &lt;input type=&quot;text&quot;  defaultValue=&quot;哈哈哈&quot; value=&#123;this.state.value&#125; onChange=&#123;this.handleChange&#125; /&gt;</span><br><span class="line">		&lt;/label&gt;</span><br><span class="line">		&lt;input type=&quot;submit&quot; value=&quot;Submit&quot; /&gt;</span><br><span class="line">	  &lt;/form&gt;</span><br><span class="line">	);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">// 非受控组件</span><br><span class="line">class NameForm extends React.Component &#123;</span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">	super(props);</span><br><span class="line">	this.handleSubmit = this.handleSubmit.bind(this);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handleSubmit(event) &#123;</span><br><span class="line">	alert(&apos;A name was submitted: &apos; + this.input.value);</span><br><span class="line">	event.preventDefault();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">	return (</span><br><span class="line">	  &lt;form onSubmit=&#123;this.handleSubmit&#125;&gt;</span><br><span class="line">		&lt;label&gt;</span><br><span class="line">		  Name:</span><br><span class="line">		  &lt;input type=&quot;text&quot; defaultValue=&quot;哈哈哈&quot; ref=&#123;(input) =&gt; this.input = input&#125; /&gt;</span><br><span class="line">		&lt;/label&gt;</span><br><span class="line">		&lt;input type=&quot;submit&quot; value=&quot;Submit&quot; /&gt;</span><br><span class="line">	  &lt;/form&gt;</span><br><span class="line">	);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="state-amp-生命周期"><a href="#state-amp-生命周期" class="headerlink" title="state&amp;生命周期"></a>state&amp;生命周期</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">class Clock extends React.Component &#123;</span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">	super(props);</span><br><span class="line">	this.state = &#123;date: new Date()&#125;;</span><br><span class="line">	</span><br><span class="line">	// This binding is necessary to make `this` work in the callback</span><br><span class="line">	this.handleClick = this.handleClick.bind(this);</span><br><span class="line">  &#125;</span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">	// dom首次挂载执行</span><br><span class="line">	this.timerID = setInterval(</span><br><span class="line">	  () =&gt; this.tick(),</span><br><span class="line">	  1000</span><br><span class="line">	);</span><br><span class="line">  &#125;</span><br><span class="line">  componentWillUnmount() &#123;</span><br><span class="line">	// 组件dom移除时执行</span><br><span class="line">	clearInterval(this.timerID);</span><br><span class="line">  &#125;</span><br><span class="line">  tick() &#123;</span><br><span class="line">	this.setState(&#123;</span><br><span class="line">	  date: new Date()</span><br><span class="line">	&#125;);</span><br><span class="line">	// 可以获取state的前一个值</span><br><span class="line">	this.setState((prevState, props) =&gt; (&#123;</span><br><span class="line">	  counter: prevState.counter + props.increment</span><br><span class="line">	&#125;));</span><br><span class="line">  &#125;</span><br><span class="line">  handleClick()&#123;</span><br><span class="line">	//使用实验性的属性初始化器语法，可以用箭头函数省掉构造器那里的绑定</span><br><span class="line">	alert(&apos;button Click&apos;)</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">	return (</span><br><span class="line">	  &lt;div className=&quot;ClockComponent&quot;&gt;</span><br><span class="line">		&lt;h1&gt;Hello, world!&lt;/h1&gt;</span><br><span class="line">		&lt;h2&gt;It is &#123;this.state.date.toLocaleTimeString()&#125;.&lt;/h2&gt;</span><br><span class="line">		&lt;button onClick=&#123;handleClick&#125;&gt;</span><br><span class="line">			Activate Lasers</span><br><span class="line">		&lt;/button&gt;</span><br><span class="line">	  &lt;/div&gt;</span><br><span class="line">	);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="HOC高级组件"><a href="#HOC高级组件" class="headerlink" title="HOC高级组件"></a>HOC高级组件</h3><p>占个坑</p>
+<h3 id="react-router应用"><a href="#react-router应用" class="headerlink" title="react-router应用"></a>react-router应用</h3><pre><code>React-router提供了一些router的核心api，包括Router, Route, Switch等，但是它没有提供dom操作进行跳转的api
+
+React-router-dom提供了BrowserRouter, Route, Link等api,我们可以通过dom的事件控制路由。
+例如点击一个按钮进行跳转，大多数情况下我们是这种情况，所以在开发过程中，我们更多是使用React-router-dom</code></pre><h3 id="涉及到的npm包"><a href="#涉及到的npm包" class="headerlink" title="涉及到的npm包"></a>涉及到的npm包</h3><pre><code>classnames
+prop-types
+style-components(css in js)</code></pre><h3 id="redux"><a href="#redux" class="headerlink" title="redux"></a>redux</h3><h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><pre><code>1. Redux依靠一个统一且不可变的数据存储来同步数据，并且更新那里的数据时会触发应用的更新渲染。 
+2. state的更新是以一种不可变的方式进行，它会发布一条明确的action消息，这个消息必须被reducer函数处理。 
+由于使用了这样明确的方式，很容易弄清楚一个action是如何影响程序的state
+state(js对象)
+action(js对象) 具体接收dispach传递的参数后怎么处理
+    action 本质上是 JavaScript 普通对象。
+    我们约定，action 内必须使用一个字符串类型的 type 字段来表示将要执行的动作。
+    多数情况下，type 会被定义成字符串常量。当应用规模越来越大时，建议使用单独的模块或文件来存放 action。
+reducer 只是一个接收 state 和 action，并返回新的 state 的函数，和view的dispatch隔离
+combineReducers()合并值，reducer其实就是state的状态定义    
+dispatch(action)来改变state的值
+3. redux-thunk(中间件异步action初级方案)和 redux-saga(中间件异步action进阶方案)
+4. dva-cli
+        阿里基于redux和react和webpack 是一个基于 Redux 的 轻量级数据流方案</code></pre><h4 id="connect和provider组件"><a href="#connect和provider组件" class="headerlink" title="connect和provider组件"></a>connect和provider组件</h4><pre><code>1. connect的参数
+mapStateToProps
+    入参state，return一个传递给展示组件props使用的对象，还可以使用第二个参数，代表容器组件的props对象
+    mapStateToProps会订阅 Store，每当state更新的时候，就会自动执行，重新计算 UI 组件的参数，从而触发 UI 组件的重新渲染
+mapDisapachToProps
+    入参dispatch，return一个传递给展示组件props使用的对象方法
+    可以通过import { bindActionCreators } from &quot;redux&quot;;来把容器组件dispatch要触发的action传递给展示容器
+2. React-Redux 提供Provider组件，可以让容器组件拿到state</code></pre><h4 id="redux-thunk，dva"><a href="#redux-thunk，dva" class="headerlink" title="redux-thunk，dva"></a>redux-thunk，dva</h4><h4 id="immutable"><a href="#immutable" class="headerlink" title="immutable"></a>immutable</h4>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/react简单笔记/" rel="tag"># react简单笔记</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/04/08/knowledge/vue简单笔记/" rel="next" title="vue简单笔记">
+                <i class="fa fa-chevron-left"></i> vue简单笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/04/08/knowledge/使用hexo/" rel="prev" title="Hello Hexo!">
+                Hello Hexo! <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">clown</p>
+              <p class="site-description motion-element" itemprop="description">旭日照原野，万物皆欣荣</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#react基本概念"><span class="nav-number">1.</span> <span class="nav-text">react基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jsx"><span class="nav-number">2.</span> <span class="nav-text">jsx</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#state-amp-生命周期"><span class="nav-number">3.</span> <span class="nav-text">state&amp;生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HOC高级组件"><span class="nav-number">4.</span> <span class="nav-text">HOC高级组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#react-router应用"><span class="nav-number">5.</span> <span class="nav-text">react-router应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#涉及到的npm包"><span class="nav-number">6.</span> <span class="nav-text">涉及到的npm包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#redux"><span class="nav-number">7.</span> <span class="nav-text">redux</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本概念"><span class="nav-number">7.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#connect和provider组件"><span class="nav-number">7.2.</span> <span class="nav-text">connect和provider组件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#redux-thunk，dva"><span class="nav-number">7.3.</span> <span class="nav-text">redux-thunk，dva</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#immutable"><span class="nav-number">7.4.</span> <span class="nav-text">immutable</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">clown</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
