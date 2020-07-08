@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="es6简单笔记,">
+  <meta name="keywords" content="es6简单笔记，es2015,">
 
 
 
@@ -82,14 +82,14 @@
 
 
 <meta name="description" content="字符串变量class类 通过class关键字，可以定义类 1234567891011//定义类class Point &amp;#123;  constructor(x, y) &amp;#123;    this.x = x;    this.y = y;  &amp;#125;  toString() &amp;#123;    return &amp;apos;(&amp;apos; + this.x + &amp;apos;, &amp;apos; +">
-<meta name="keywords" content="es6简单笔记">
+<meta name="keywords" content="es6简单笔记，es2015">
 <meta property="og:type" content="article">
 <meta property="og:title" content="es6语法笔记">
 <meta property="og:url" content="https://uniquecrownclown.github.io/2020/05/15/knowledge/es6语法笔记/index.html">
 <meta property="og:site_name" content="uniquecrownclown">
 <meta property="og:description" content="字符串变量class类 通过class关键字，可以定义类 1234567891011//定义类class Point &amp;#123;  constructor(x, y) &amp;#123;    this.x = x;    this.y = y;  &amp;#125;  toString() &amp;#123;    return &amp;apos;(&amp;apos; + this.x + &amp;apos;, &amp;apos; +">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-05-15T03:34:44.479Z">
+<meta property="og:updated_time" content="2020-06-05T02:16:50.315Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="es6语法笔记">
 <meta name="twitter:description" content="字符串变量class类 通过class关键字，可以定义类 1234567891011//定义类class Point &amp;#123;  constructor(x, y) &amp;#123;    this.x = x;    this.y = y;  &amp;#125;  toString() &amp;#123;    return &amp;apos;(&amp;apos; + this.x + &amp;apos;, &amp;apos; +">
@@ -416,6 +416,8 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const characters = [0,1,2,3];</span><br><span class="line"></span><br><span class="line">console.log(characters.indexOf(0));</span><br><span class="line">// 0</span><br><span class="line">console.log(characters.includes(0));</span><br><span class="line">// true</span><br></pre></td></tr></table></figure>
 
 <h4 id="Array-from-new-Set-new-Array"><a href="#Array-from-new-Set-new-Array" class="headerlink" title="Array.from(new Set(new Array()))"></a>Array.from(new Set(new Array()))</h4><p>数组去重并转为可做遍历操作的数组对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// 运用es6不用循环生成m长度都是n的数组</span><br><span class="line">var arr = Array.from(&#123;length:100&#125;, (v,k) =&gt; k);</span><br><span class="line">alert(arr.join(&quot;,&quot;));</span><br></pre></td></tr></table></figure>
+
 <h4 id="Array-forEach-s"><a href="#Array-forEach-s" class="headerlink" title="Array.forEach(s)"></a>Array.forEach(s)</h4><ol>
 <li><p>包含异步操作时，await和async无效，可改用for(item of items){}实现</p>
 </li>
@@ -543,7 +545,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/es6简单笔记/" rel="tag"># es6简单笔记</a>
+            <a href="/tags/es6简单笔记，es2015/" rel="tag"># es6简单笔记，es2015</a>
           
         </div>
       
@@ -556,8 +558,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/04/08/knowledge/使用hexo/" rel="next" title="Hello Hexo!">
-                <i class="fa fa-chevron-left"></i> Hello Hexo!
+              <a href="/2020/04/08/knowledge/taro/" rel="next" title="taro">
+                <i class="fa fa-chevron-left"></i> taro
               </a>
             
           </div>
@@ -645,7 +647,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

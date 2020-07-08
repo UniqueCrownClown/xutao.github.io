@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="cordova,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -81,18 +81,17 @@
 
 
 
-<meta name="description" content="旭日照原野，万物皆欣荣">
-<meta name="keywords" content="cordova">
+<meta name="description" content="question1: key wordcreated 同步mounted 同步.then 异步微setTimeout 异步宏先同步再异步，异步先微再宏   1234567891011121314151617created()&amp;#123;    console.log(&amp;quot;created&amp;quot;);    new Promise(resolve =&amp;gt; &amp;#123;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="cordova">
-<meta property="og:url" content="https://uniquecrownclown.github.io/2020/04/08/knowledge/cordova使用小结/index.html">
+<meta property="og:title" content="uniquecrownclown">
+<meta property="og:url" content="https://uniquecrownclown.github.io/2020/05/28/life/20200527/index.html">
 <meta property="og:site_name" content="uniquecrownclown">
-<meta property="og:description" content="旭日照原野，万物皆欣荣">
+<meta property="og:description" content="question1: key wordcreated 同步mounted 同步.then 异步微setTimeout 异步宏先同步再异步，异步先微再宏   1234567891011121314151617created()&amp;#123;    console.log(&amp;quot;created&amp;quot;);    new Promise(resolve =&amp;gt; &amp;#123;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-11T02:39:04.039Z">
+<meta property="og:updated_time" content="2020-06-30T08:10:48.654Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="cordova">
-<meta name="twitter:description" content="旭日照原野，万物皆欣荣">
+<meta name="twitter:title" content="uniquecrownclown">
+<meta name="twitter:description" content="question1: key wordcreated 同步mounted 同步.then 异步微setTimeout 异步宏先同步再异步，异步先微再宏   1234567891011121314151617created()&amp;#123;    console.log(&amp;quot;created&amp;quot;);    new Promise(resolve =&amp;gt; &amp;#123;">
 
 
 
@@ -122,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="https://uniquecrownclown.github.io/2020/04/08/knowledge/cordova使用小结/">
+  <link rel="canonical" href="https://uniquecrownclown.github.io/2020/05/28/life/20200527/">
 
 
 
 
 
-  <title>cordova | uniquecrownclown</title>
+  <title> | uniquecrownclown</title>
   
 
 
@@ -265,7 +264,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://uniquecrownclown.github.io/2020/04/08/knowledge/cordova使用小结/">
+    <link itemprop="mainEntityOfPage" href="https://uniquecrownclown.github.io/2020/05/28/life/20200527/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="clown">
@@ -282,7 +281,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">cordova</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -294,8 +293,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-08T10:47:58+08:00">
-                2020-04-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-28T09:39:22+08:00">
+                2020-05-28
               </time>
             
 
@@ -304,28 +303,6 @@
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/知识笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">知识笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -354,7 +331,40 @@
       
 
       
-        
+        <ol>
+<li><p>question1:</p>
+<p>key word<br>created 同步<br>mounted 同步<br>.then 异步微<br>setTimeout 异步宏<br>先同步再异步，异步先微再宏</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">created()&#123;</span><br><span class="line">    console.log(&quot;created&quot;);</span><br><span class="line">    new Promise(resolve =&gt; &#123;</span><br><span class="line">        resolve()</span><br><span class="line">    &#125;).then( res =&gt; &#123;</span><br><span class="line">        console.log(&quot;.then&quot;);</span><br><span class="line">        setTimeout(()=&gt;&#123;</span><br><span class="line">            console.log(&quot;setTimeout  -- 3000&quot;)</span><br><span class="line">        &#125;,3000);</span><br><span class="line">    &#125;);</span><br><span class="line">    setTimeout(() =&gt; &#123;</span><br><span class="line">        console.log(&quot;setTimeout -- 5000&quot;);</span><br><span class="line">    &#125;,5000);</span><br><span class="line">&#125;,</span><br><span class="line">mounted() &#123;</span><br><span class="line">    console.log(&quot;mounted&quot;)；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><p>snowpack<br>构建工具</p>
+</li>
+<li><p>vite<br><a href="https://github.com/vitejs/vite.git" target="_blank" rel="noopener">https://github.com/vitejs/vite.git</a><br>tsrv</p>
+<pre><code>https://github.com/JasKang/tsrv.git</code></pre><p>rollup.js</p>
+<p>esm 的浏览器写法</p>
+<script type="module" src="./index.js">xxx</script>
+
+
+
+</li>
+</ol>
+<p>打包dist生成的js的组织结构</p>
+<p>SystemJS 是一个通用的模块加载器，它能在浏览器或者 NodeJS 上动态加载模块，并且支持 CommonJS、AMD、全局模块对象和 ES6 模块。通过使用插件，它不仅可以加载 JavaScript，还可以加载 CoffeeScript 和 TypeScript。</p>
+<ol start="4">
+<li>js模块知识<br>ESM, CJS,<br>UMD, AMD</li>
+</ol>
+<p>AMD<br>        amd（Asynchronous Module Definitions）规范因RequireJS而出名，其适用于浏览器端，commonjs常被用于node中，当然其也可通过Browserify用于浏览器中。<br>        异步加载<br>        其被提出，主要用于客户端browser<br>        其语法不直观，没有commonjs便于书写<br>        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 文件名: foo.js</span><br><span class="line">    define([&apos;jquery&apos;], function ($) &#123;</span><br><span class="line">        //    方法</span><br><span class="line">        function myFunc()&#123;&#125;;</span><br><span class="line"></span><br><span class="line">        //    暴露公共方法</span><br><span class="line">        return myFunc;</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure></p>
+<p>CJS<br>        语法类似于node，因为node使用commonjs规范<br>        commonjs导入模块是同步导入<br>        主要用于后端，客户端用的话需要通过Browserify<br>        书写直观</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//    文件名: foo.js</span><br><span class="line">//    依赖</span><br><span class="line">var $ = require(&apos;jquery&apos;);</span><br><span class="line">//    方法</span><br><span class="line">function myFunc()&#123;&#125;;</span><br><span class="line"></span><br><span class="line">//    暴露公共方法（一个）</span><br><span class="line">module.exports = myFunc;</span><br></pre></td></tr></table></figure></code></pre><p>umd<br>            其是amd和commonjs的统一规范，支持两种规范，即写一套代码，可用于多种场景。其用法如下：<br>            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">(function (root, factory) &#123;</span><br><span class="line">            if (typeof define === &apos;function&apos; &amp;&amp; define.amd) &#123;</span><br><span class="line">                // AMD</span><br><span class="line">                define([&apos;jquery&apos;], factory);</span><br><span class="line">            &#125; else if (typeof exports === &apos;object&apos;) &#123;</span><br><span class="line">                // Node, CommonJS之类的</span><br><span class="line">                module.exports = factory(require(&apos;jquery&apos;));</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                // 浏览器全局变量(root 即 window)</span><br><span class="line">                root.returnExports = factory(root.jQuery);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;(this, function ($) &#123;</span><br><span class="line">            //    方法</span><br><span class="line">            function myFunc()&#123;&#125;;</span><br><span class="line"></span><br><span class="line">            //    暴露公共方法</span><br><span class="line">            return myFunc;</span><br><span class="line">        &#125;));</span><br></pre></td></tr></table></figure></p>
+<pre><code>前后端通用
+与CJS或AMD不同，UMD更像是一种配置多个模块系统的模式。
+UMD在使用诸如Rollup/ Webpack之类的bundler时通常用作备用模块</code></pre><ol start="5">
+<li>宏任务和微任务</li>
+</ol>
+<p>js模拟hash表实现</p>
+
       
     </div>
     
@@ -369,12 +379,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/cordova/" rel="tag"># cordova</a>
-          
-        </div>
-      
 
       
       
@@ -384,8 +388,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/04/08/ballmusic/诗词/" rel="next" title="诗词">
-                <i class="fa fa-chevron-left"></i> 诗词
+              <a href="/2020/05/25/knowledge/vue3.0/" rel="next" title="vue3.0">
+                <i class="fa fa-chevron-left"></i> vue3.0
               </a>
             
           </div>
@@ -394,8 +398,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/04/08/knowledge/linux命令/" rel="prev" title="linux命令">
-                linux命令 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/07/02/knowledge/位运算符操作/" rel="prev" title>
+                 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="uniquecrownclown">
 <meta property="og:description" content="react基本概念 Create React App脚手架Create React App搭建单页react工程 1234567891011#### 方法1npx create-react-app my-app  --scripts-version=react-scripts-tsnpx create-react-app my-project --scripts-version=react-scr">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-29T05:53:22.504Z">
+<meta property="og:updated_time" content="2020-06-01T07:03:39.474Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react学习笔记">
 <meta name="twitter:description" content="react基本概念 Create React App脚手架Create React App搭建单页react工程 1234567891011#### 方法1npx create-react-app my-app  --scripts-version=react-scripts-tsnpx create-react-app my-project --scripts-version=react-scr">
@@ -398,7 +398,35 @@ mapStateToProps
 mapDisapachToProps
     入参dispatch，return一个传递给展示组件props使用的对象方法
     可以通过import { bindActionCreators } from &quot;redux&quot;;来把容器组件dispatch要触发的action传递给展示容器
-2. React-Redux 提供Provider组件，可以让容器组件拿到state</code></pre><h4 id="redux-thunk，dva"><a href="#redux-thunk，dva" class="headerlink" title="redux-thunk，dva"></a>redux-thunk，dva</h4><h4 id="immutable"><a href="#immutable" class="headerlink" title="immutable"></a>immutable</h4>
+2. React-Redux 提供Provider组件，可以让容器组件拿到state</code></pre><h4 id="redux-thunk，dva"><a href="#redux-thunk，dva" class="headerlink" title="redux-thunk，dva"></a>redux-thunk，dva</h4><h4 id="immutable"><a href="#immutable" class="headerlink" title="immutable"></a>immutable</h4><h4 id="React-Portal"><a href="#React-Portal" class="headerlink" title="React Portal"></a>React Portal</h4><pre><code>Portal 提供了一种将子节点渲染到存在于父组件以外的 DOM 节点的优秀的方案
+(一个组件调用一个 append 到 body 上的 html 片段)
+React16 ReactDOM.createPortal(child, container) 的使用
+``
+const modalRoot = document.getElementById(&apos;modal-root&apos;);
+
+    class Modal extends React.Component {
+    constructor(props) {
+        super(props);
+        this.el = document.createElement(&apos;div&apos;);
+    }
+
+    componentDidMount() {
+        modalRoot.appendChild(this.el);
+    }
+
+    componentWillUnmount() {
+        modalRoot.removeChild(this.el);
+    }
+
+    render() {
+        return ReactDOM.createPortal(
+        this.props.children,
+        this.el,
+        );
+    }
+    }
+    ```
+// 在 simple-spa 实践一下 Portal 的 dropdown 和 modal 代码</code></pre>
       
     </div>
     
@@ -428,8 +456,8 @@ mapDisapachToProps
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/04/08/knowledge/vue简单笔记/" rel="next" title="vue简单笔记">
-                <i class="fa fa-chevron-left"></i> vue简单笔记
+              <a href="/2020/04/08/knowledge/token认证/" rel="next" title="token认证">
+                <i class="fa fa-chevron-left"></i> token认证
               </a>
             
           </div>
@@ -438,8 +466,8 @@ mapDisapachToProps
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/04/08/knowledge/使用hexo/" rel="prev" title="Hello Hexo!">
-                Hello Hexo! <i class="fa fa-chevron-right"></i>
+              <a href="/2020/04/08/knowledge/taro/" rel="prev" title="taro">
+                taro <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -517,7 +545,7 @@ mapDisapachToProps
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -579,7 +607,7 @@ mapDisapachToProps
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#react基本概念"><span class="nav-number">1.</span> <span class="nav-text">react基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jsx"><span class="nav-number">2.</span> <span class="nav-text">jsx</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#state-amp-生命周期"><span class="nav-number">3.</span> <span class="nav-text">state&amp;生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HOC高级组件"><span class="nav-number">4.</span> <span class="nav-text">HOC高级组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#react-router应用"><span class="nav-number">5.</span> <span class="nav-text">react-router应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#涉及到的npm包"><span class="nav-number">6.</span> <span class="nav-text">涉及到的npm包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#redux"><span class="nav-number">7.</span> <span class="nav-text">redux</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本概念"><span class="nav-number">7.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#connect和provider组件"><span class="nav-number">7.2.</span> <span class="nav-text">connect和provider组件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#redux-thunk，dva"><span class="nav-number">7.3.</span> <span class="nav-text">redux-thunk，dva</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#immutable"><span class="nav-number">7.4.</span> <span class="nav-text">immutable</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#react基本概念"><span class="nav-number">1.</span> <span class="nav-text">react基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jsx"><span class="nav-number">2.</span> <span class="nav-text">jsx</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#state-amp-生命周期"><span class="nav-number">3.</span> <span class="nav-text">state&amp;生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HOC高级组件"><span class="nav-number">4.</span> <span class="nav-text">HOC高级组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#react-router应用"><span class="nav-number">5.</span> <span class="nav-text">react-router应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#涉及到的npm包"><span class="nav-number">6.</span> <span class="nav-text">涉及到的npm包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#redux"><span class="nav-number">7.</span> <span class="nav-text">redux</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本概念"><span class="nav-number">7.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#connect和provider组件"><span class="nav-number">7.2.</span> <span class="nav-text">connect和provider组件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#redux-thunk，dva"><span class="nav-number">7.3.</span> <span class="nav-text">redux-thunk，dva</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#immutable"><span class="nav-number">7.4.</span> <span class="nav-text">immutable</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#React-Portal"><span class="nav-number">7.5.</span> <span class="nav-text">React Portal</span></a></li></ol></li></ol></div>
             
 
           </div>
