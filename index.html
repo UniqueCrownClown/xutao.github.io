@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
@@ -668,6 +668,246 @@ UMD在使用诸如Rollup/ Webpack之类的bundler时通常用作备用模块</co
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://uniquecrownclown.github.io/2020/04/08/knowledge/taro/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="clown">
+      <meta itemprop="description" content="旭日照原野，万物皆欣荣">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="uniquecrownclown">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/08/knowledge/taro/" class="post-title-link" itemprop="url">taro</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-04-08 10:47:58" itemprop="dateCreated datePublished" datetime="2020-04-08T10:47:58+08:00">2020-04-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-03-11 10:39:27" itemprop="dateModified" datetime="2020-03-11T10:39:27+08:00">2020-03-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/知识笔记/" itemprop="url" rel="index"><span itemprop="name">知识笔记</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://uniquecrownclown.github.io/2020/04/08/knowledge/token认证/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="clown">
+      <meta itemprop="description" content="旭日照原野，万物皆欣荣">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="uniquecrownclown">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/08/knowledge/token认证/" class="post-title-link" itemprop="url">token认证</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-04-08 10:47:58" itemprop="dateCreated datePublished" datetime="2020-04-08T10:47:58+08:00">2020-04-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-12-31 09:23:31" itemprop="dateModified" datetime="2019-12-31T09:23:31+08:00">2019-12-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/知识笔记/" itemprop="url" rel="index"><span itemprop="name">知识笔记</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>json web token 简称JWT，是基于JSON的一种开放标准<br>    JWT = base64编码(header) + ‘.’ + base64编码(payload) + ‘.’ + signature<br>token流程<br>    1. 用户使用用户名密码来请求服务器<br>    2. 服务器进行验证用户的信息<br>    3. 服务器通过验证发送给用户一个token<br>    4. 客户端存储token，并在每次请求时附送上这个token值<br>    5. 服务端验证token值，并返回数据<br>客户端应用<br>    fetch(‘api/user/1’, {<br>      headers: {<br>        ‘Authorization’: ‘Bearer ‘ + token<br>      }<br>    })</p>
+<p>Token 和 JWT 的区别</p>
+<pre><code>Token：服务端验证客户端发送过来的 Token 时，还需要查询数据库获取用户信息，然后验证 Token 是否有效。
+JWT： 将 Token 和 Payload 加密后存储于客户端，服务端只需要使用密钥解密进行校验（校验也是 JWT 自己实现的）即可，不需要查询或者减少查询数据库，因为 JWT 自包含了用户信息和加密的数据</code></pre>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://uniquecrownclown.github.io/2020/04/08/knowledge/使用hexo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="clown">
+      <meta itemprop="description" content="旭日照原野，万物皆欣荣">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="uniquecrownclown">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/08/knowledge/使用hexo/" class="post-title-link" itemprop="url">Hello Hexo!</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-04-08 10:47:58" itemprop="dateCreated datePublished" datetime="2020-04-08T10:47:58+08:00">2020-04-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-07-08 11:32:09" itemprop="dateModified" datetime="2020-07-08T11:32:09+08:00">2020-07-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/知识笔记/" itemprop="url" rel="index"><span itemprop="name">知识笔记</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="全局安裝Hexo"><a href="#全局安裝Hexo" class="headerlink" title="全局安裝Hexo"></a>全局安裝Hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cnpm install hexo -g</span><br></pre></td></tr></table></figure>
+
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server //在本地服务器上测试，端口4000</span><br><span class="line">//还可开启调试模式（即加上 --debug）</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate //刷新hexo的资源</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy //同步到github</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h3 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next </span><br><span class="line">//下载一个next主题的例子</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/themes/" target="_blank" rel="noopener">Themes</a></p>
+<h3 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">'文章名'</span> //在<span class="built_in">source</span>/_posts路径下创建的文章</span><br><span class="line">//图片资源放在hexo/resources下用markdown相对路径的方式引入</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/zh-cn/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="hexo-cdnify-jsDelivr-实现cdn加速"><a href="#hexo-cdnify-jsDelivr-实现cdn加速" class="headerlink" title="hexo-cdnify + jsDelivr 实现cdn加速"></a>hexo-cdnify + jsDelivr 实现cdn加速</h3>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://uniquecrownclown.github.io/2020/04/08/knowledge/react/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -813,285 +1053,6 @@ const modalRoot = document.getElementById(&apos;modal-root&apos;);
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://uniquecrownclown.github.io/2020/04/08/knowledge/taro/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="clown">
-      <meta itemprop="description" content="旭日照原野，万物皆欣荣">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="uniquecrownclown">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/08/knowledge/taro/" class="post-title-link" itemprop="url">taro</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-04-08 10:47:58" itemprop="dateCreated datePublished" datetime="2020-04-08T10:47:58+08:00">2020-04-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-03-11 10:39:27" itemprop="dateModified" datetime="2020-03-11T10:39:27+08:00">2020-03-11</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/知识笔记/" itemprop="url" rel="index"><span itemprop="name">知识笔记</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://uniquecrownclown.github.io/2020/04/08/knowledge/vue简单笔记/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="clown">
-      <meta itemprop="description" content="旭日照原野，万物皆欣荣">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="uniquecrownclown">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/08/knowledge/vue简单笔记/" class="post-title-link" itemprop="url">vue简单笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-04-08 10:47:58" itemprop="dateCreated datePublished" datetime="2020-04-08T10:47:58+08:00">2020-04-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-09-29 13:49:31" itemprop="dateModified" datetime="2019-09-29T13:49:31+08:00">2019-09-29</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/知识笔记/" itemprop="url" rel="index"><span itemprop="name">知识笔记</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="更新安装vue脚手架"><a href="#更新安装vue脚手架" class="headerlink" title="更新安装vue脚手架"></a>更新安装vue脚手架</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --global @vue/cli</span><br></pre></td></tr></table></figure>
-
-<h4 id="问题1：vue过渡钩子函数实现动画效果"><a href="#问题1：vue过渡钩子函数实现动画效果" class="headerlink" title="问题1：vue过渡钩子函数实现动画效果"></a>问题1：vue过渡钩子函数实现动画效果</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;transition</span><br><span class="line">  v-on:before-enter=&quot;beforeEnter&quot;</span><br><span class="line">  v-on:enter=&quot;enter&quot;</span><br><span class="line">  v-on:leave=&quot;leave&quot;</span><br><span class="line">  v-bind:css=&quot;false&quot;&gt;</span><br><span class="line">  &lt;p v-if=&quot;show&quot;&gt;</span><br><span class="line">    Imgss</span><br><span class="line">  &lt;/p&gt;</span><br><span class="line">&lt;/transition&gt;</span><br><span class="line">vue实现methods</span><br><span class="line">methods: &#123;</span><br><span class="line">  beforeEnter: function (el) &#123;</span><br><span class="line">    el.style.opacity = 0</span><br><span class="line">    el.style.transformOrigin = &apos;50% 50%&apos;</span><br><span class="line">  &#125;,</span><br><span class="line">  enter: function (el, done) &#123;</span><br><span class="line">    Velocity(el, &#123; opacity: 1,translateX:&apos;20px&apos;, fontSize: &apos;2em&apos; &#125;, &#123; duration: 300 &#125;);</span><br><span class="line">    Velocity(el, &#123; translateX:&apos;0px&apos;,fontSize: &apos;1em&apos; &#125;, &#123; complete: done &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  leave: function (el, done) &#123;</span><br><span class="line">    Velocity(el, &#123; rotateZ: &apos;1080deg&apos;,scale:&apos;0.1&apos; ,opacity: 0&#125;,&#123;duration:3000&#125;, &#123; complete: done &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="问题2-vue-router的钩子函数"><a href="#问题2-vue-router的钩子函数" class="headerlink" title="问题2: vue-router的钩子函数"></a>问题2: vue-router的钩子函数</h4><ol>
-<li><p>全局路由钩子</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">router.beforeEach((to, from, next) =&gt; &#123;</span><br><span class="line">    //会在任意路由跳转前执行，next一定要记着执行，不然路由不能跳转了</span><br><span class="line">  console.log(&apos;beforeEach&apos;)</span><br><span class="line">  console.log(to,from)</span><br><span class="line">  //</span><br><span class="line">  next()</span><br><span class="line">&#125;)</span><br><span class="line">//</span><br><span class="line">router.afterEach((to, from) =&gt; &#123;</span><br><span class="line">    //会在任意路由跳转后执行</span><br><span class="line">  console.log(&apos;afterEach&apos;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>单个路由钩子</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">beforeRouteEnter (to, from, next) &#123;</span><br><span class="line">  // 在渲染该组件的对应路由被 confirm 前调用</span><br><span class="line">  // 不！能！获取组件实例 `this`</span><br><span class="line">  // 因为当守卫执行前，组件实例还没被创建</span><br><span class="line">&#125;,</span><br><span class="line">beforeRouteUpdate (to, from, next) &#123;</span><br><span class="line">  // 在当前路由改变，但是该组件被复用时调用</span><br><span class="line">  // 举例来说，对于一个带有动态参数的路径 /foo/:id，在 /foo/1 和 /foo/2 之间跳转的时候，</span><br><span class="line">  // 由于会渲染同样的 Foo 组件，因此组件实例会被复用。而这个钩子就会在这个情况下被调用。</span><br><span class="line">  // 可以访问组件实例 `this`</span><br><span class="line">&#125;,</span><br><span class="line">beforeRouteLeave (to, from, next) &#123;</span><br><span class="line">  // 导航离开该组件的对应路由时调用</span><br><span class="line">  // 可以访问组件实例 `this`</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h4 id="问题3-vue的method-watch和computed的区别"><a href="#问题3-vue的method-watch和computed的区别" class="headerlink" title="问题3: vue的method,watch和computed的区别"></a>问题3: vue的method,watch和computed的区别</h4><pre><code>三者都是函数型驱动，，methods不处理数据逻辑关系，只提供可调用的函数,,是需要主动调用的..
-watch和computed能够“自动执行”预先定义的函数</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">watch和computed的区别</span><br><span class="line">computed:&#123;</span><br><span class="line">	fullName: function () &#123; return this.firstName + this.lastName &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">new Vue(&#123;</span><br><span class="line"> el: &apos;#app&apos;,</span><br><span class="line"> data: &#123;</span><br><span class="line">  fullName: &apos;彭湖湾&apos;,</span><br><span class="line">  firstName: &apos;彭&apos;,</span><br><span class="line">  secName: &apos;湖&apos;,</span><br><span class="line">  thirdName: &apos;湾&apos;</span><br><span class="line"> &#125;,</span><br><span class="line"> // 对watch中的代码进行重构，实现同样效果</span><br><span class="line"> computed: function () &#123;</span><br><span class="line">  this.fullName = this.firstName + this.secName + this.thirdName</span><br><span class="line">  console.log(this.fullName)</span><br><span class="line"> &#125;</span><br><span class="line">&#125;)</span><br><span class="line">watch: &#123;</span><br><span class="line">	firstName: function (val) &#123; this.fullName = val + this.lastName &#125;</span><br><span class="line">&#125;</span><br><span class="line">new Vue(&#123;</span><br><span class="line">	 el: &apos;#app&apos;,</span><br><span class="line">	 data: &#123;</span><br><span class="line">	  fullName: &apos;彭湖湾&apos;,</span><br><span class="line">	  firstName: &apos;彭&apos;,</span><br><span class="line">	  secName: &apos;湖&apos;,</span><br><span class="line">	  thirdName: &apos;湾&apos;</span><br><span class="line">	 &#125;,</span><br><span class="line">	 // watch中的代码显然是同类型，重复的，它并不简洁，也不优雅</span><br><span class="line">	 watch: &#123;</span><br><span class="line">	  firstName: function (newValue) &#123;</span><br><span class="line">	   this.fullName = newValue + this.secName + this.thirdName</span><br><span class="line">	   console.log(this.fullName)</span><br><span class="line">	  &#125;,</span><br><span class="line">	  secName: function (newValue) &#123;</span><br><span class="line">	   this.fullName = this.firstName + newValue + this.thirdName</span><br><span class="line">	   console.log(this.fullName)</span><br><span class="line">	  &#125;,</span><br><span class="line">	  thirdName: function (newValue) &#123;</span><br><span class="line">	   this.fullName = this.firstName + this.secName + newValue</span><br><span class="line">	   console.log(this.fullName)</span><br><span class="line">	  &#125;</span><br><span class="line">	 &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<pre><code>数据触发条件不同，watch是firstName改变时触发fullName做出相应的更改
-                  computed是firstname和latName改变时触发fullName的改变
-所以两者处理的场景不太一样
-                computed擅长处理的场景：一个数据受多个数据影响
-                watch擅长处理的场景：一个数据影响多个数据
-
-method和computed
-    1.存在依赖型数据 2.依赖型数据发生改变这两个条件,computed才会重新计算。 
-    2.methods下的数据，是每次触发都会进行计算的 </code></pre><h4 id="问题4-组件嵌套"><a href="#问题4-组件嵌套" class="headerlink" title="问题4: 组件嵌套"></a>问题4: 组件嵌套</h4><pre><code>组件的嵌套，solt实现组件嵌套和直接用标签名标记嵌套，solt可以实现组件的多态
-&lt;slot&gt; 就是外部调用时，标签中的内容。如果外部调用时没有提供内容的话，那么它就会使用自己默认提供的内容，非常方便</code></pre><h3 id="vue-router"><a href="#vue-router" class="headerlink" title="vue-router"></a>vue-router</h3><pre><code>vue-router 默认的hash模式和history模式的区别
-用history模式没有#,会和后台的接口耦合在一起
-充分利用了history.pushState API来完成URL的跳转
-服务端增加一个覆盖所有情况的候选资源：如果 URL 匹配不到任何静态资源，则应该返回同一个 index.html 页面
-这么做以后，你的服务器就不再返回 404 错误页面，因为对于所有路径都会返回 index.html 文件。为了避免这种情况，你应该在 Vue 应用里面覆盖所有的路由情况，然后在给出一个 404 页面。</code></pre><h3 id="vuex"><a href="#vuex" class="headerlink" title="vuex"></a>vuex</h3><pre><code>专为 Vue.js 应用程序开发的状态管理模式
-组件的共享状态抽取出来,以一个全局单例模式管理, 能在全局往所有的组件注入数据
-
-single组件可以抽出来，多个不同组件用同一个数据源(集中式状态管理)
-SPA（单页应用程序）
-vuex：规范组件中数据流动，主要用于异步的http请求后数据的刷新。通过官方的vue-devtools可以无缝对接
-
-- state:
-- mutations:    mutation 必须同步执行
-- getters:    在获取数据之前进行的一种再编辑,相当于对数据的一个过滤和加工
-- actions:    可以异步执行
-- module:
-    1. 由于使用单一状态树，应用的所有状态会集中到一个比较大的对象。当应用变得非常复杂时，store 对象就有可能变得相当臃肿。
-
-    2. 为了解决以上问题，Vuex 允许我们将 store 分割成模块（module）。每个模块拥有自己的 state、mutation、action、getter、甚至是嵌套子模块——从上至下进行同样方式的分割
-
-dispatch --&gt; actions
-commit --&gt; mutations
-
-Getter 就是把组件中共有的对state 的操作进行了提取，它就相当于 对state 的computed. 所以它会获得state 作为第一个参数。
-(也可以不用getter，那么在每個組件需要的state的加工后操作返回值時，都需要在各自的computed中进行处理，这不就重复么)</code></pre><h3 id="常见常用点"><a href="#常见常用点" class="headerlink" title="常见常用点"></a>常见常用点</h3><ol>
-<li><p>如果是得到state还需要进一步操作filter，在getter中完成，，减少view或者是component的代码量</p>
-</li>
-<li><p>mutation保证是纯函数，，在action中用commit的方式去添加处理逻辑</p>
-</li>
-<li><p>keepAlive很轻松的就能够实现组件之间的缓存，主要还是返回其DOM不让数据重新刷新。当使用了keepAlive之后，页面第一次进入，钩子的触发顺序created-&gt;mounted-&gt;activated，退出时触发deactivated。再次进入（前进或者后退）时，只触发actived。</p>
-</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://uniquecrownclown.github.io/2020/04/08/knowledge/token认证/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="clown">
-      <meta itemprop="description" content="旭日照原野，万物皆欣荣">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="uniquecrownclown">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/08/knowledge/token认证/" class="post-title-link" itemprop="url">token认证</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-04-08 10:47:58" itemprop="dateCreated datePublished" datetime="2020-04-08T10:47:58+08:00">2020-04-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-31 09:23:31" itemprop="dateModified" datetime="2019-12-31T09:23:31+08:00">2019-12-31</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/知识笔记/" itemprop="url" rel="index"><span itemprop="name">知识笔记</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>json web token 简称JWT，是基于JSON的一种开放标准<br>    JWT = base64编码(header) + ‘.’ + base64编码(payload) + ‘.’ + signature<br>token流程<br>    1. 用户使用用户名密码来请求服务器<br>    2. 服务器进行验证用户的信息<br>    3. 服务器通过验证发送给用户一个token<br>    4. 客户端存储token，并在每次请求时附送上这个token值<br>    5. 服务端验证token值，并返回数据<br>客户端应用<br>    fetch(‘api/user/1’, {<br>      headers: {<br>        ‘Authorization’: ‘Bearer ‘ + token<br>      }<br>    })</p>
-<p>Token 和 JWT 的区别</p>
-<pre><code>Token：服务端验证客户端发送过来的 Token 时，还需要查询数据库获取用户信息，然后验证 Token 是否有效。
-JWT： 将 Token 和 Payload 加密后存储于客户端，服务端只需要使用密钥解密进行校验（校验也是 JWT 自己实现的）即可，不需要查询或者减少查询数据库，因为 JWT 自包含了用户信息和加密的数据</code></pre>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://uniquecrownclown.github.io/2020/04/08/knowledge/浏览器渲染加载过程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1172,7 +1133,7 @@ JWT： 将 Token 和 Payload 加密后存储于客户端，服务端只需要使
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://uniquecrownclown.github.io/2020/04/08/knowledge/使用hexo/">
+    <link itemprop="mainEntityOfPage" href="https://uniquecrownclown.github.io/2020/04/08/knowledge/常见算法知识/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1186,7 +1147,7 @@ JWT： 将 Token 和 Payload 加密后存储于客户端，服务端只需要使
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/04/08/knowledge/使用hexo/" class="post-title-link" itemprop="url">Hello Hexo!</a>
+            <a href="/2020/04/08/knowledge/常见算法知识/" class="post-title-link" itemprop="url">常见算法知识</a>
         </h2>
 
         <div class="post-meta">
@@ -1203,7 +1164,7 @@ JWT： 将 Token 和 Payload 加密后存储于客户端，服务端只需要使
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-08 11:32:09" itemprop="dateModified" datetime="2020-07-08T11:32:09+08:00">2020-07-08</time>
+                <time title="Modified: 2020-07-08 10:29:43" itemprop="dateModified" datetime="2020-07-08T10:29:43+08:00">2020-07-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1226,25 +1187,20 @@ JWT： 将 Token 和 Payload 加密后存储于客户端，服务端只需要使
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="全局安裝Hexo"><a href="#全局安裝Hexo" class="headerlink" title="全局安裝Hexo"></a>全局安裝Hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cnpm install hexo -g</span><br></pre></td></tr></table></figure>
+          <h3 id="常见排序算法"><a href="#常见排序算法" class="headerlink" title="常见排序算法"></a>常见排序算法</h3><h3 id="时间和空间复杂度"><a href="#时间和空间复杂度" class="headerlink" title="时间和空间复杂度"></a>时间和空间复杂度</h3><ol>
+<li>两数之和<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var twoSum = function(nums, target) &#123;</span><br><span class="line">    for(let i=0;i&lt;nums.length-1;i++)&#123;</span><br><span class="line">        for(let j = i+1;j&lt;nums.length;j++)&#123;</span><br><span class="line">            if(num[i]+ num[j]=== target)&#123;</span><br><span class="line">                return [nums[i], nums[j]]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server //在本地服务器上测试，端口4000</span><br><span class="line">//还可开启调试模式（即加上 --debug）</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>时间复杂度—O(n2)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var twoSum = function(nums, target) &#123;</span><br><span class="line">let res = &#123;&#125;;</span><br><span class="line">for( let i = 0;i &lt; nums.length; i++)&#123;</span><br><span class="line">    res[target- nums[i]] = nums[i];</span><br><span class="line">&#125;</span><br><span class="line"> for (let j = 0; j &lt; nums.length; j++) &#123;</span><br><span class="line">     &lt;!-- if(nums[j] === res[j])&#123;</span><br><span class="line">         return [nums[j],target-num[j]]</span><br><span class="line">     &#125; --&gt;</span><br><span class="line">     if(res[num[j]] !== undefined)&#123;</span><br><span class="line">         return [nums[j], res[nums[j]]]</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate //刷新hexo的资源</span><br></pre></td></tr></table></figure>
+<p>时间复杂度— O(n)<br>空间复杂度— O(n)</p>
+<p>动态规划</p>
+<p>简单归纳法</p>
+<p>递推法的基本思想:  分析问题, 归纳出 递推式</p>
+<p>递推法的实现—for循环(数组)</p>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy //同步到github</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-<h3 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next </span><br><span class="line">//下载一个next主题的例子</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/themes/" target="_blank" rel="noopener">Themes</a></p>
-<h3 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">'文章名'</span> //在<span class="built_in">source</span>/_posts路径下创建的文章</span><br><span class="line">//图片资源放在hexo/resources下用markdown相对路径的方式引入</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/zh-cn/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="hexo-cdnify-jsDelivr-实现cdn加速"><a href="#hexo-cdnify-jsDelivr-实现cdn加速" class="headerlink" title="hexo-cdnify + jsDelivr 实现cdn加速"></a>hexo-cdnify + jsDelivr 实现cdn加速</h3>
       
     </div>
 
