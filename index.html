@@ -149,211 +149,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://uniquecrownclown.github.io/2020/07/02/knowledge/位运算符操作/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="clown">
-      <meta itemprop="description" content="旭日照原野，万物皆欣荣">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="uniquecrownclown">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/07/02/knowledge/位运算符操作/" class="post-title-link" itemprop="url">Untitled</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-07-02 10:50:54 / Modified: 10:55:37" itemprop="dateCreated datePublished" datetime="2020-07-02T10:50:54+08:00">2020-07-02</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>位运算符在js中的妙用：</p>
-<ol>
-<li>使用&amp;运算符判断一个数的奇偶</li>
-</ol>
-<p>偶数 &amp; 1 = 0</p>
-<p>奇数 &amp; 1 = 1</p>
-<p>那么0&amp;1=0,1&amp;1=1</p>
-<ol start="2">
-<li>使用~~，&gt;&gt;,&lt;&lt;,&gt;&gt;&gt;,|来取整</li>
-</ol>
-<p>~~3.14 = 3</p>
-<p>3.14 &gt;&gt; 0 = 3</p>
-<p>3.14 &lt;&lt; 0 = 3 3.14 | 0 = 3 3.14 &gt;&gt;&gt; 0 = 3(&gt;&gt;&gt;不可对负数取整)</p>
-<p>注意：~~-3.14 = -3 其它的一样</p>
-<ol start="3">
-<li>使用&lt;&lt;,&gt;&gt;来计算乘除</li>
-</ol>
-<p>乘法：</p>
-<p>1*2 = 2</p>
-<p>1&lt;&gt;1 = 1(2/2的一次方)</p>
-<ol start="4">
-<li>利用^来完成比较两个数是否相等</li>
-</ol>
-<p>1 ^ 1 = 0</p>
-<p>1 ^ 非1数 ！=0</p>
-<p>所以同一个数……同一个数等于0，否则不等于0</p>
-<ol start="5">
-<li>使用^来完成值交换</li>
-</ol>
-<p>a = 1</p>
-<p>b = 2</p>
-<p>a ^= b</p>
-<p>b ^= a</p>
-<p>a ^= b</p>
-<p>结果a=2，b=1</p>
-<ol start="6">
-<li>使用&amp;,&gt;&gt;,|来完成rgb值和16进制颜色值之间的转换</li>
-</ol>
-<p>16进制颜色值转RGB：</p>
-<p><code>function hexToRGB(hex){
-    var hex = hex.replace(&quot;#&quot;,&quot;0x&quot;),
-        r = hex &gt;&gt; 16,
-        g = hex &gt;&gt; 8 &amp; 0xff,
-        b = hex &amp; 0xff;
-    return &quot;rgb(&quot;+r+&quot;,&quot;+g+&quot;,&quot;+b+&quot;)&quot;;
-}</code></p>
-<p>RGB转16进制颜色值：</p>
-<p><code>function RGBToHex(rgb){
-    var rgbArr = rgb.split(/[^\d]+/),
-        color = rgbArr[1]&lt;&lt;16 | rgbArr[2]&lt;&lt;8 | rgbArr[3];
-    return &quot;#&quot;+color.toString(16);
-}</code></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://uniquecrownclown.github.io/2020/05/28/life/20200527/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="clown">
-      <meta itemprop="description" content="旭日照原野，万物皆欣荣">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="uniquecrownclown">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/28/life/20200527/" class="post-title-link" itemprop="url">Untitled</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-05-28 09:39:22" itemprop="dateCreated datePublished" datetime="2020-05-28T09:39:22+08:00">2020-05-28</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-09 09:56:08" itemprop="dateModified" datetime="2020-07-09T09:56:08+08:00">2020-07-09</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ol>
-<li><p>question1:</p>
-<p>key word<br>created 同步<br>mounted 同步<br>.then 异步微<br>setTimeout 异步宏<br>先同步再异步，异步先微再宏</p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">created()&#123;</span><br><span class="line">    console.log(&quot;created&quot;);</span><br><span class="line">    new Promise(resolve =&gt; &#123;</span><br><span class="line">        resolve()</span><br><span class="line">    &#125;).then( res =&gt; &#123;</span><br><span class="line">        console.log(&quot;.then&quot;);</span><br><span class="line">        setTimeout(()=&gt;&#123;</span><br><span class="line">            console.log(&quot;setTimeout  -- 3000&quot;)</span><br><span class="line">        &#125;,3000);</span><br><span class="line">    &#125;);</span><br><span class="line">    setTimeout(() =&gt; &#123;</span><br><span class="line">        console.log(&quot;setTimeout -- 5000&quot;);</span><br><span class="line">    &#125;,5000);</span><br><span class="line">&#125;,</span><br><span class="line">mounted() &#123;</span><br><span class="line">    console.log(&quot;mounted&quot;)；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li><p>snowpack<br>构建工具</p>
-</li>
-<li><p>vite<br><a href="https://github.com/vitejs/vite.git" target="_blank" rel="noopener">https://github.com/vitejs/vite.git</a><br>tsrv</p>
-<pre><code>https://github.com/JasKang/tsrv.git</code></pre><p>rollup.js</p>
-<p>esm 的浏览器写法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;module&quot; src=&quot;./index.js&quot;&gt;xxx&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<p>打包dist生成的js的组织结构</p>
-<p>SystemJS 是一个通用的模块加载器，它能在浏览器或者 NodeJS 上动态加载模块，并且支持 CommonJS、AMD、全局模块对象和 ES6 模块。通过使用插件，它不仅可以加载 JavaScript，还可以加载 CoffeeScript 和 TypeScript。</p>
-<ol start="4">
-<li>js模块知识<br>ESM, CJS,<br>UMD, AMD</li>
-</ol>
-<p>AMD<br>        amd（Asynchronous Module Definitions）规范因RequireJS而出名，其适用于浏览器端，commonjs常被用于node中，当然其也可通过Browserify用于浏览器中。<br>        异步加载<br>        其被提出，主要用于客户端browser<br>        其语法不直观，没有commonjs便于书写<br>        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 文件名: foo.js</span><br><span class="line">    define([&apos;jquery&apos;], function ($) &#123;</span><br><span class="line">        //    方法</span><br><span class="line">        function myFunc()&#123;&#125;;</span><br><span class="line"></span><br><span class="line">        //    暴露公共方法</span><br><span class="line">        return myFunc;</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure></p>
-<p>CJS<br>        语法类似于node，因为node使用commonjs规范<br>        commonjs导入模块是同步导入<br>        主要用于后端，客户端用的话需要通过Browserify<br>        书写直观</p>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//    文件名: foo.js</span><br><span class="line">//    依赖</span><br><span class="line">var $ = require(&apos;jquery&apos;);</span><br><span class="line">//    方法</span><br><span class="line">function myFunc()&#123;&#125;;</span><br><span class="line"></span><br><span class="line">//    暴露公共方法（一个）</span><br><span class="line">module.exports = myFunc;</span><br></pre></td></tr></table></figure></code></pre><p>umd<br>            其是amd和commonjs的统一规范，支持两种规范，即写一套代码，可用于多种场景。其用法如下：<br>            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">(function (root, factory) &#123;</span><br><span class="line">            if (typeof define === &apos;function&apos; &amp;&amp; define.amd) &#123;</span><br><span class="line">                // AMD</span><br><span class="line">                define([&apos;jquery&apos;], factory);</span><br><span class="line">            &#125; else if (typeof exports === &apos;object&apos;) &#123;</span><br><span class="line">                // Node, CommonJS之类的</span><br><span class="line">                module.exports = factory(require(&apos;jquery&apos;));</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                // 浏览器全局变量(root 即 window)</span><br><span class="line">                root.returnExports = factory(root.jQuery);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;(this, function ($) &#123;</span><br><span class="line">            //    方法</span><br><span class="line">            function myFunc()&#123;&#125;;</span><br><span class="line"></span><br><span class="line">            //    暴露公共方法</span><br><span class="line">            return myFunc;</span><br><span class="line">        &#125;));</span><br></pre></td></tr></table></figure></p>
-<pre><code>前后端通用
-与CJS或AMD不同，UMD更像是一种配置多个模块系统的模式。
-UMD在使用诸如Rollup/ Webpack之类的bundler时通常用作备用模块</code></pre><ol start="5">
-<li>宏任务和微任务</li>
-</ol>
-<p>js模拟hash表实现</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://uniquecrownclown.github.io/2020/05/25/knowledge/vue3.0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -668,6 +463,151 @@ UMD在使用诸如Rollup/ Webpack之类的bundler时通常用作备用模块</co
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://uniquecrownclown.github.io/2020/04/08/knowledge/react/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="clown">
+      <meta itemprop="description" content="旭日照原野，万物皆欣荣">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="uniquecrownclown">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/08/knowledge/react/" class="post-title-link" itemprop="url">react学习笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-04-08 10:47:58" itemprop="dateCreated datePublished" datetime="2020-04-08T10:47:58+08:00">2020-04-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-01 15:03:39" itemprop="dateModified" datetime="2020-06-01T15:03:39+08:00">2020-06-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/知识笔记/" itemprop="url" rel="index"><span itemprop="name">知识笔记</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="react基本概念"><a href="#react基本概念" class="headerlink" title="react基本概念"></a>react基本概念</h3><ol>
+<li><p>Create React App脚手架<br>Create React App搭建单页react工程</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#### 方法1</span><br><span class="line">npx create-react-app my-app  --scripts-version=react-scripts-ts</span><br><span class="line">npx create-react-app my-project --scripts-version=react-scripts-ts-antd(antd的ui框架)</span><br><span class="line">cd my-app</span><br><span class="line">npm start</span><br><span class="line">#### 方法2</span><br><span class="line">npm init react-app my-app</span><br><span class="line">yarn create react-app my-app</span><br><span class="line">cd my-app</span><br><span class="line">yarn start</span><br><span class="line">npm run eject 暴露webpack的config,不可逆</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>容器组件和展示组件的区别<br>container文件夹和compoment文件夹</p>
+</li>
+</ol>
+<h3 id="jsx"><a href="#jsx" class="headerlink" title="jsx"></a>jsx</h3><ol>
+<li><p>JSX 代码的外面扩上一个小括号，这样可以防止 分号自动插入 的 bug<br>会带上换行和缩进，这样可以增强代码的可读性<br>JSX 当中的表达式要包含在大括号里<br>React DOM 使用 camelCase 小驼峰命名 来定义属性的名称，而不是使用 HTML 的属性名称<br> class 变成了 className，而 tabindex 则对应着 tabIndex<br>条件渲染和列表渲染</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function NumberList(props) &#123;</span><br><span class="line">  const numbers = props.numbers;</span><br><span class="line">  return (</span><br><span class="line">	&lt;ul&gt;</span><br><span class="line">	  &#123;numbers.map((number) =&gt;</span><br><span class="line">		&lt;ListItem key=&#123;number.toString()&#125;</span><br><span class="line">				  value=&#123;number&#125; /&gt;</span><br><span class="line"></span><br><span class="line">	  )&#125;</span><br><span class="line">	&lt;/ul&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>表单怎么用onchange事件和state实现数据value的控制</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">//受控组件</span><br><span class="line">class NameForm extends React.Component &#123;</span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">	super(props);</span><br><span class="line">	this.state = &#123;value: &apos;&apos;&#125;;</span><br><span class="line"></span><br><span class="line">	this.handleChange = this.handleChange.bind(this);</span><br><span class="line">	this.handleSubmit = this.handleSubmit.bind(this);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handleChange(event) &#123;</span><br><span class="line">	this.setState(&#123;value: event.target.value&#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handleSubmit(event) &#123;</span><br><span class="line">	alert(&apos;A name was submitted: &apos; + this.state.value);</span><br><span class="line">	event.preventDefault();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">	return (</span><br><span class="line">	  &lt;form onSubmit=&#123;this.handleSubmit&#125;&gt;</span><br><span class="line">		&lt;label&gt;</span><br><span class="line">		  Name:</span><br><span class="line">		  &lt;input type=&quot;text&quot;  defaultValue=&quot;哈哈哈&quot; value=&#123;this.state.value&#125; onChange=&#123;this.handleChange&#125; /&gt;</span><br><span class="line">		&lt;/label&gt;</span><br><span class="line">		&lt;input type=&quot;submit&quot; value=&quot;Submit&quot; /&gt;</span><br><span class="line">	  &lt;/form&gt;</span><br><span class="line">	);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">// 非受控组件</span><br><span class="line">class NameForm extends React.Component &#123;</span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">	super(props);</span><br><span class="line">	this.handleSubmit = this.handleSubmit.bind(this);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handleSubmit(event) &#123;</span><br><span class="line">	alert(&apos;A name was submitted: &apos; + this.input.value);</span><br><span class="line">	event.preventDefault();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">	return (</span><br><span class="line">	  &lt;form onSubmit=&#123;this.handleSubmit&#125;&gt;</span><br><span class="line">		&lt;label&gt;</span><br><span class="line">		  Name:</span><br><span class="line">		  &lt;input type=&quot;text&quot; defaultValue=&quot;哈哈哈&quot; ref=&#123;(input) =&gt; this.input = input&#125; /&gt;</span><br><span class="line">		&lt;/label&gt;</span><br><span class="line">		&lt;input type=&quot;submit&quot; value=&quot;Submit&quot; /&gt;</span><br><span class="line">	  &lt;/form&gt;</span><br><span class="line">	);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="state-amp-生命周期"><a href="#state-amp-生命周期" class="headerlink" title="state&amp;生命周期"></a>state&amp;生命周期</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">class Clock extends React.Component &#123;</span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">	super(props);</span><br><span class="line">	this.state = &#123;date: new Date()&#125;;</span><br><span class="line">	</span><br><span class="line">	// This binding is necessary to make `this` work in the callback</span><br><span class="line">	this.handleClick = this.handleClick.bind(this);</span><br><span class="line">  &#125;</span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">	// dom首次挂载执行</span><br><span class="line">	this.timerID = setInterval(</span><br><span class="line">	  () =&gt; this.tick(),</span><br><span class="line">	  1000</span><br><span class="line">	);</span><br><span class="line">  &#125;</span><br><span class="line">  componentWillUnmount() &#123;</span><br><span class="line">	// 组件dom移除时执行</span><br><span class="line">	clearInterval(this.timerID);</span><br><span class="line">  &#125;</span><br><span class="line">  tick() &#123;</span><br><span class="line">	this.setState(&#123;</span><br><span class="line">	  date: new Date()</span><br><span class="line">	&#125;);</span><br><span class="line">	// 可以获取state的前一个值</span><br><span class="line">	this.setState((prevState, props) =&gt; (&#123;</span><br><span class="line">	  counter: prevState.counter + props.increment</span><br><span class="line">	&#125;));</span><br><span class="line">  &#125;</span><br><span class="line">  handleClick()&#123;</span><br><span class="line">	//使用实验性的属性初始化器语法，可以用箭头函数省掉构造器那里的绑定</span><br><span class="line">	alert(&apos;button Click&apos;)</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">	return (</span><br><span class="line">	  &lt;div className=&quot;ClockComponent&quot;&gt;</span><br><span class="line">		&lt;h1&gt;Hello, world!&lt;/h1&gt;</span><br><span class="line">		&lt;h2&gt;It is &#123;this.state.date.toLocaleTimeString()&#125;.&lt;/h2&gt;</span><br><span class="line">		&lt;button onClick=&#123;handleClick&#125;&gt;</span><br><span class="line">			Activate Lasers</span><br><span class="line">		&lt;/button&gt;</span><br><span class="line">	  &lt;/div&gt;</span><br><span class="line">	);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="HOC高级组件"><a href="#HOC高级组件" class="headerlink" title="HOC高级组件"></a>HOC高级组件</h3><p>占个坑</p>
+<h3 id="react-router应用"><a href="#react-router应用" class="headerlink" title="react-router应用"></a>react-router应用</h3><pre><code>React-router提供了一些router的核心api，包括Router, Route, Switch等，但是它没有提供dom操作进行跳转的api
+
+React-router-dom提供了BrowserRouter, Route, Link等api,我们可以通过dom的事件控制路由。
+例如点击一个按钮进行跳转，大多数情况下我们是这种情况，所以在开发过程中，我们更多是使用React-router-dom</code></pre><h3 id="涉及到的npm包"><a href="#涉及到的npm包" class="headerlink" title="涉及到的npm包"></a>涉及到的npm包</h3><pre><code>classnames
+prop-types
+style-components(css in js)</code></pre><h3 id="redux"><a href="#redux" class="headerlink" title="redux"></a>redux</h3><h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><pre><code>1. Redux依靠一个统一且不可变的数据存储来同步数据，并且更新那里的数据时会触发应用的更新渲染。 
+2. state的更新是以一种不可变的方式进行，它会发布一条明确的action消息，这个消息必须被reducer函数处理。 
+由于使用了这样明确的方式，很容易弄清楚一个action是如何影响程序的state
+state(js对象)
+action(js对象) 具体接收dispach传递的参数后怎么处理
+    action 本质上是 JavaScript 普通对象。
+    我们约定，action 内必须使用一个字符串类型的 type 字段来表示将要执行的动作。
+    多数情况下，type 会被定义成字符串常量。当应用规模越来越大时，建议使用单独的模块或文件来存放 action。
+reducer 只是一个接收 state 和 action，并返回新的 state 的函数，和view的dispatch隔离
+combineReducers()合并值，reducer其实就是state的状态定义    
+dispatch(action)来改变state的值
+3. redux-thunk(中间件异步action初级方案)和 redux-saga(中间件异步action进阶方案)
+4. dva-cli
+        阿里基于redux和react和webpack 是一个基于 Redux 的 轻量级数据流方案</code></pre><h4 id="connect和provider组件"><a href="#connect和provider组件" class="headerlink" title="connect和provider组件"></a>connect和provider组件</h4><pre><code>1. connect的参数
+mapStateToProps
+    入参state，return一个传递给展示组件props使用的对象，还可以使用第二个参数，代表容器组件的props对象
+    mapStateToProps会订阅 Store，每当state更新的时候，就会自动执行，重新计算 UI 组件的参数，从而触发 UI 组件的重新渲染
+mapDisapachToProps
+    入参dispatch，return一个传递给展示组件props使用的对象方法
+    可以通过import { bindActionCreators } from &quot;redux&quot;;来把容器组件dispatch要触发的action传递给展示容器
+2. React-Redux 提供Provider组件，可以让容器组件拿到state</code></pre><h4 id="redux-thunk，dva"><a href="#redux-thunk，dva" class="headerlink" title="redux-thunk，dva"></a>redux-thunk，dva</h4><h4 id="immutable"><a href="#immutable" class="headerlink" title="immutable"></a>immutable</h4><h4 id="React-Portal"><a href="#React-Portal" class="headerlink" title="React Portal"></a>React Portal</h4><pre><code>Portal 提供了一种将子节点渲染到存在于父组件以外的 DOM 节点的优秀的方案
+(一个组件调用一个 append 到 body 上的 html 片段)
+React16 ReactDOM.createPortal(child, container) 的使用
+``
+const modalRoot = document.getElementById(&apos;modal-root&apos;);
+
+    class Modal extends React.Component {
+    constructor(props) {
+        super(props);
+        this.el = document.createElement(&apos;div&apos;);
+    }
+
+    componentDidMount() {
+        modalRoot.appendChild(this.el);
+    }
+
+    componentWillUnmount() {
+        modalRoot.removeChild(this.el);
+    }
+
+    render() {
+        return ReactDOM.createPortal(
+        this.props.children,
+        this.el,
+        );
+    }
+    }
+    ```
+// 在 simple-spa 实践一下 Portal 的 dropdown 和 modal 代码</code></pre>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://uniquecrownclown.github.io/2020/04/08/knowledge/taro/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -817,6 +757,136 @@ JWT： 将 Token 和 Payload 加密后存储于客户端，服务端只需要使
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://uniquecrownclown.github.io/2020/04/08/knowledge/vue简单笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="clown">
+      <meta itemprop="description" content="旭日照原野，万物皆欣荣">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="uniquecrownclown">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/08/knowledge/vue简单笔记/" class="post-title-link" itemprop="url">vue简单笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-04-08 10:47:58" itemprop="dateCreated datePublished" datetime="2020-04-08T10:47:58+08:00">2020-04-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-09-29 13:49:31" itemprop="dateModified" datetime="2019-09-29T13:49:31+08:00">2019-09-29</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/知识笔记/" itemprop="url" rel="index"><span itemprop="name">知识笔记</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="更新安装vue脚手架"><a href="#更新安装vue脚手架" class="headerlink" title="更新安装vue脚手架"></a>更新安装vue脚手架</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --global @vue/cli</span><br></pre></td></tr></table></figure>
+
+<h4 id="问题1：vue过渡钩子函数实现动画效果"><a href="#问题1：vue过渡钩子函数实现动画效果" class="headerlink" title="问题1：vue过渡钩子函数实现动画效果"></a>问题1：vue过渡钩子函数实现动画效果</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;transition</span><br><span class="line">  v-on:before-enter=&quot;beforeEnter&quot;</span><br><span class="line">  v-on:enter=&quot;enter&quot;</span><br><span class="line">  v-on:leave=&quot;leave&quot;</span><br><span class="line">  v-bind:css=&quot;false&quot;&gt;</span><br><span class="line">  &lt;p v-if=&quot;show&quot;&gt;</span><br><span class="line">    Imgss</span><br><span class="line">  &lt;/p&gt;</span><br><span class="line">&lt;/transition&gt;</span><br><span class="line">vue实现methods</span><br><span class="line">methods: &#123;</span><br><span class="line">  beforeEnter: function (el) &#123;</span><br><span class="line">    el.style.opacity = 0</span><br><span class="line">    el.style.transformOrigin = &apos;50% 50%&apos;</span><br><span class="line">  &#125;,</span><br><span class="line">  enter: function (el, done) &#123;</span><br><span class="line">    Velocity(el, &#123; opacity: 1,translateX:&apos;20px&apos;, fontSize: &apos;2em&apos; &#125;, &#123; duration: 300 &#125;);</span><br><span class="line">    Velocity(el, &#123; translateX:&apos;0px&apos;,fontSize: &apos;1em&apos; &#125;, &#123; complete: done &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  leave: function (el, done) &#123;</span><br><span class="line">    Velocity(el, &#123; rotateZ: &apos;1080deg&apos;,scale:&apos;0.1&apos; ,opacity: 0&#125;,&#123;duration:3000&#125;, &#123; complete: done &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="问题2-vue-router的钩子函数"><a href="#问题2-vue-router的钩子函数" class="headerlink" title="问题2: vue-router的钩子函数"></a>问题2: vue-router的钩子函数</h4><ol>
+<li><p>全局路由钩子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">router.beforeEach((to, from, next) =&gt; &#123;</span><br><span class="line">    //会在任意路由跳转前执行，next一定要记着执行，不然路由不能跳转了</span><br><span class="line">  console.log(&apos;beforeEach&apos;)</span><br><span class="line">  console.log(to,from)</span><br><span class="line">  //</span><br><span class="line">  next()</span><br><span class="line">&#125;)</span><br><span class="line">//</span><br><span class="line">router.afterEach((to, from) =&gt; &#123;</span><br><span class="line">    //会在任意路由跳转后执行</span><br><span class="line">  console.log(&apos;afterEach&apos;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>单个路由钩子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">beforeRouteEnter (to, from, next) &#123;</span><br><span class="line">  // 在渲染该组件的对应路由被 confirm 前调用</span><br><span class="line">  // 不！能！获取组件实例 `this`</span><br><span class="line">  // 因为当守卫执行前，组件实例还没被创建</span><br><span class="line">&#125;,</span><br><span class="line">beforeRouteUpdate (to, from, next) &#123;</span><br><span class="line">  // 在当前路由改变，但是该组件被复用时调用</span><br><span class="line">  // 举例来说，对于一个带有动态参数的路径 /foo/:id，在 /foo/1 和 /foo/2 之间跳转的时候，</span><br><span class="line">  // 由于会渲染同样的 Foo 组件，因此组件实例会被复用。而这个钩子就会在这个情况下被调用。</span><br><span class="line">  // 可以访问组件实例 `this`</span><br><span class="line">&#125;,</span><br><span class="line">beforeRouteLeave (to, from, next) &#123;</span><br><span class="line">  // 导航离开该组件的对应路由时调用</span><br><span class="line">  // 可以访问组件实例 `this`</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h4 id="问题3-vue的method-watch和computed的区别"><a href="#问题3-vue的method-watch和computed的区别" class="headerlink" title="问题3: vue的method,watch和computed的区别"></a>问题3: vue的method,watch和computed的区别</h4><pre><code>三者都是函数型驱动，，methods不处理数据逻辑关系，只提供可调用的函数,,是需要主动调用的..
+watch和computed能够“自动执行”预先定义的函数</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">watch和computed的区别</span><br><span class="line">computed:&#123;</span><br><span class="line">	fullName: function () &#123; return this.firstName + this.lastName &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">new Vue(&#123;</span><br><span class="line"> el: &apos;#app&apos;,</span><br><span class="line"> data: &#123;</span><br><span class="line">  fullName: &apos;彭湖湾&apos;,</span><br><span class="line">  firstName: &apos;彭&apos;,</span><br><span class="line">  secName: &apos;湖&apos;,</span><br><span class="line">  thirdName: &apos;湾&apos;</span><br><span class="line"> &#125;,</span><br><span class="line"> // 对watch中的代码进行重构，实现同样效果</span><br><span class="line"> computed: function () &#123;</span><br><span class="line">  this.fullName = this.firstName + this.secName + this.thirdName</span><br><span class="line">  console.log(this.fullName)</span><br><span class="line"> &#125;</span><br><span class="line">&#125;)</span><br><span class="line">watch: &#123;</span><br><span class="line">	firstName: function (val) &#123; this.fullName = val + this.lastName &#125;</span><br><span class="line">&#125;</span><br><span class="line">new Vue(&#123;</span><br><span class="line">	 el: &apos;#app&apos;,</span><br><span class="line">	 data: &#123;</span><br><span class="line">	  fullName: &apos;彭湖湾&apos;,</span><br><span class="line">	  firstName: &apos;彭&apos;,</span><br><span class="line">	  secName: &apos;湖&apos;,</span><br><span class="line">	  thirdName: &apos;湾&apos;</span><br><span class="line">	 &#125;,</span><br><span class="line">	 // watch中的代码显然是同类型，重复的，它并不简洁，也不优雅</span><br><span class="line">	 watch: &#123;</span><br><span class="line">	  firstName: function (newValue) &#123;</span><br><span class="line">	   this.fullName = newValue + this.secName + this.thirdName</span><br><span class="line">	   console.log(this.fullName)</span><br><span class="line">	  &#125;,</span><br><span class="line">	  secName: function (newValue) &#123;</span><br><span class="line">	   this.fullName = this.firstName + newValue + this.thirdName</span><br><span class="line">	   console.log(this.fullName)</span><br><span class="line">	  &#125;,</span><br><span class="line">	  thirdName: function (newValue) &#123;</span><br><span class="line">	   this.fullName = this.firstName + this.secName + newValue</span><br><span class="line">	   console.log(this.fullName)</span><br><span class="line">	  &#125;</span><br><span class="line">	 &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<pre><code>数据触发条件不同，watch是firstName改变时触发fullName做出相应的更改
+                  computed是firstname和latName改变时触发fullName的改变
+所以两者处理的场景不太一样
+                computed擅长处理的场景：一个数据受多个数据影响
+                watch擅长处理的场景：一个数据影响多个数据
+
+method和computed
+    1.存在依赖型数据 2.依赖型数据发生改变这两个条件,computed才会重新计算。 
+    2.methods下的数据，是每次触发都会进行计算的 </code></pre><h4 id="问题4-组件嵌套"><a href="#问题4-组件嵌套" class="headerlink" title="问题4: 组件嵌套"></a>问题4: 组件嵌套</h4><pre><code>组件的嵌套，solt实现组件嵌套和直接用标签名标记嵌套，solt可以实现组件的多态
+&lt;slot&gt; 就是外部调用时，标签中的内容。如果外部调用时没有提供内容的话，那么它就会使用自己默认提供的内容，非常方便</code></pre><h3 id="vue-router"><a href="#vue-router" class="headerlink" title="vue-router"></a>vue-router</h3><pre><code>vue-router 默认的hash模式和history模式的区别
+用history模式没有#,会和后台的接口耦合在一起
+充分利用了history.pushState API来完成URL的跳转
+服务端增加一个覆盖所有情况的候选资源：如果 URL 匹配不到任何静态资源，则应该返回同一个 index.html 页面
+这么做以后，你的服务器就不再返回 404 错误页面，因为对于所有路径都会返回 index.html 文件。为了避免这种情况，你应该在 Vue 应用里面覆盖所有的路由情况，然后在给出一个 404 页面。</code></pre><h3 id="vuex"><a href="#vuex" class="headerlink" title="vuex"></a>vuex</h3><pre><code>专为 Vue.js 应用程序开发的状态管理模式
+组件的共享状态抽取出来,以一个全局单例模式管理, 能在全局往所有的组件注入数据
+
+single组件可以抽出来，多个不同组件用同一个数据源(集中式状态管理)
+SPA（单页应用程序）
+vuex：规范组件中数据流动，主要用于异步的http请求后数据的刷新。通过官方的vue-devtools可以无缝对接
+
+- state:
+- mutations:    mutation 必须同步执行
+- getters:    在获取数据之前进行的一种再编辑,相当于对数据的一个过滤和加工
+- actions:    可以异步执行
+- module:
+    1. 由于使用单一状态树，应用的所有状态会集中到一个比较大的对象。当应用变得非常复杂时，store 对象就有可能变得相当臃肿。
+
+    2. 为了解决以上问题，Vuex 允许我们将 store 分割成模块（module）。每个模块拥有自己的 state、mutation、action、getter、甚至是嵌套子模块——从上至下进行同样方式的分割
+
+dispatch --&gt; actions
+commit --&gt; mutations
+
+Getter 就是把组件中共有的对state 的操作进行了提取，它就相当于 对state 的computed. 所以它会获得state 作为第一个参数。
+(也可以不用getter，那么在每個組件需要的state的加工后操作返回值時，都需要在各自的computed中进行处理，这不就重复么)</code></pre><h3 id="常见常用点"><a href="#常见常用点" class="headerlink" title="常见常用点"></a>常见常用点</h3><ol>
+<li><p>如果是得到state还需要进一步操作filter，在getter中完成，，减少view或者是component的代码量</p>
+</li>
+<li><p>mutation保证是纯函数，，在action中用commit的方式去添加处理逻辑</p>
+</li>
+<li><p>keepAlive很轻松的就能够实现组件之间的缓存，主要还是返回其DOM不让数据重新刷新。当使用了keepAlive之后，页面第一次进入，钩子的触发顺序created-&gt;mounted-&gt;activated，退出时触发deactivated。再次进入（前进或者后退）时，只触发actived。</p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://uniquecrownclown.github.io/2020/04/08/knowledge/使用hexo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -890,231 +960,6 @@ JWT： 将 Token 和 Payload 加密后存储于客户端，服务端只需要使
 
 <p>More info: <a href="https://hexo.io/zh-cn/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
 <h3 id="hexo-cdnify-jsDelivr-实现cdn加速"><a href="#hexo-cdnify-jsDelivr-实现cdn加速" class="headerlink" title="hexo-cdnify + jsDelivr 实现cdn加速"></a>hexo-cdnify + jsDelivr 实现cdn加速</h3>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://uniquecrownclown.github.io/2020/04/08/knowledge/react/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="clown">
-      <meta itemprop="description" content="旭日照原野，万物皆欣荣">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="uniquecrownclown">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/08/knowledge/react/" class="post-title-link" itemprop="url">react学习笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-04-08 10:47:58" itemprop="dateCreated datePublished" datetime="2020-04-08T10:47:58+08:00">2020-04-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-01 15:03:39" itemprop="dateModified" datetime="2020-06-01T15:03:39+08:00">2020-06-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/知识笔记/" itemprop="url" rel="index"><span itemprop="name">知识笔记</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="react基本概念"><a href="#react基本概念" class="headerlink" title="react基本概念"></a>react基本概念</h3><ol>
-<li><p>Create React App脚手架<br>Create React App搭建单页react工程</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#### 方法1</span><br><span class="line">npx create-react-app my-app  --scripts-version=react-scripts-ts</span><br><span class="line">npx create-react-app my-project --scripts-version=react-scripts-ts-antd(antd的ui框架)</span><br><span class="line">cd my-app</span><br><span class="line">npm start</span><br><span class="line">#### 方法2</span><br><span class="line">npm init react-app my-app</span><br><span class="line">yarn create react-app my-app</span><br><span class="line">cd my-app</span><br><span class="line">yarn start</span><br><span class="line">npm run eject 暴露webpack的config,不可逆</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>容器组件和展示组件的区别<br>container文件夹和compoment文件夹</p>
-</li>
-</ol>
-<h3 id="jsx"><a href="#jsx" class="headerlink" title="jsx"></a>jsx</h3><ol>
-<li><p>JSX 代码的外面扩上一个小括号，这样可以防止 分号自动插入 的 bug<br>会带上换行和缩进，这样可以增强代码的可读性<br>JSX 当中的表达式要包含在大括号里<br>React DOM 使用 camelCase 小驼峰命名 来定义属性的名称，而不是使用 HTML 的属性名称<br> class 变成了 className，而 tabindex 则对应着 tabIndex<br>条件渲染和列表渲染</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function NumberList(props) &#123;</span><br><span class="line">  const numbers = props.numbers;</span><br><span class="line">  return (</span><br><span class="line">	&lt;ul&gt;</span><br><span class="line">	  &#123;numbers.map((number) =&gt;</span><br><span class="line">		&lt;ListItem key=&#123;number.toString()&#125;</span><br><span class="line">				  value=&#123;number&#125; /&gt;</span><br><span class="line"></span><br><span class="line">	  )&#125;</span><br><span class="line">	&lt;/ul&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>表单怎么用onchange事件和state实现数据value的控制</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">//受控组件</span><br><span class="line">class NameForm extends React.Component &#123;</span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">	super(props);</span><br><span class="line">	this.state = &#123;value: &apos;&apos;&#125;;</span><br><span class="line"></span><br><span class="line">	this.handleChange = this.handleChange.bind(this);</span><br><span class="line">	this.handleSubmit = this.handleSubmit.bind(this);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handleChange(event) &#123;</span><br><span class="line">	this.setState(&#123;value: event.target.value&#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handleSubmit(event) &#123;</span><br><span class="line">	alert(&apos;A name was submitted: &apos; + this.state.value);</span><br><span class="line">	event.preventDefault();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">	return (</span><br><span class="line">	  &lt;form onSubmit=&#123;this.handleSubmit&#125;&gt;</span><br><span class="line">		&lt;label&gt;</span><br><span class="line">		  Name:</span><br><span class="line">		  &lt;input type=&quot;text&quot;  defaultValue=&quot;哈哈哈&quot; value=&#123;this.state.value&#125; onChange=&#123;this.handleChange&#125; /&gt;</span><br><span class="line">		&lt;/label&gt;</span><br><span class="line">		&lt;input type=&quot;submit&quot; value=&quot;Submit&quot; /&gt;</span><br><span class="line">	  &lt;/form&gt;</span><br><span class="line">	);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">// 非受控组件</span><br><span class="line">class NameForm extends React.Component &#123;</span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">	super(props);</span><br><span class="line">	this.handleSubmit = this.handleSubmit.bind(this);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handleSubmit(event) &#123;</span><br><span class="line">	alert(&apos;A name was submitted: &apos; + this.input.value);</span><br><span class="line">	event.preventDefault();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">	return (</span><br><span class="line">	  &lt;form onSubmit=&#123;this.handleSubmit&#125;&gt;</span><br><span class="line">		&lt;label&gt;</span><br><span class="line">		  Name:</span><br><span class="line">		  &lt;input type=&quot;text&quot; defaultValue=&quot;哈哈哈&quot; ref=&#123;(input) =&gt; this.input = input&#125; /&gt;</span><br><span class="line">		&lt;/label&gt;</span><br><span class="line">		&lt;input type=&quot;submit&quot; value=&quot;Submit&quot; /&gt;</span><br><span class="line">	  &lt;/form&gt;</span><br><span class="line">	);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h3 id="state-amp-生命周期"><a href="#state-amp-生命周期" class="headerlink" title="state&amp;生命周期"></a>state&amp;生命周期</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">class Clock extends React.Component &#123;</span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">	super(props);</span><br><span class="line">	this.state = &#123;date: new Date()&#125;;</span><br><span class="line">	</span><br><span class="line">	// This binding is necessary to make `this` work in the callback</span><br><span class="line">	this.handleClick = this.handleClick.bind(this);</span><br><span class="line">  &#125;</span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">	// dom首次挂载执行</span><br><span class="line">	this.timerID = setInterval(</span><br><span class="line">	  () =&gt; this.tick(),</span><br><span class="line">	  1000</span><br><span class="line">	);</span><br><span class="line">  &#125;</span><br><span class="line">  componentWillUnmount() &#123;</span><br><span class="line">	// 组件dom移除时执行</span><br><span class="line">	clearInterval(this.timerID);</span><br><span class="line">  &#125;</span><br><span class="line">  tick() &#123;</span><br><span class="line">	this.setState(&#123;</span><br><span class="line">	  date: new Date()</span><br><span class="line">	&#125;);</span><br><span class="line">	// 可以获取state的前一个值</span><br><span class="line">	this.setState((prevState, props) =&gt; (&#123;</span><br><span class="line">	  counter: prevState.counter + props.increment</span><br><span class="line">	&#125;));</span><br><span class="line">  &#125;</span><br><span class="line">  handleClick()&#123;</span><br><span class="line">	//使用实验性的属性初始化器语法，可以用箭头函数省掉构造器那里的绑定</span><br><span class="line">	alert(&apos;button Click&apos;)</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">	return (</span><br><span class="line">	  &lt;div className=&quot;ClockComponent&quot;&gt;</span><br><span class="line">		&lt;h1&gt;Hello, world!&lt;/h1&gt;</span><br><span class="line">		&lt;h2&gt;It is &#123;this.state.date.toLocaleTimeString()&#125;.&lt;/h2&gt;</span><br><span class="line">		&lt;button onClick=&#123;handleClick&#125;&gt;</span><br><span class="line">			Activate Lasers</span><br><span class="line">		&lt;/button&gt;</span><br><span class="line">	  &lt;/div&gt;</span><br><span class="line">	);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="HOC高级组件"><a href="#HOC高级组件" class="headerlink" title="HOC高级组件"></a>HOC高级组件</h3><p>占个坑</p>
-<h3 id="react-router应用"><a href="#react-router应用" class="headerlink" title="react-router应用"></a>react-router应用</h3><pre><code>React-router提供了一些router的核心api，包括Router, Route, Switch等，但是它没有提供dom操作进行跳转的api
-
-React-router-dom提供了BrowserRouter, Route, Link等api,我们可以通过dom的事件控制路由。
-例如点击一个按钮进行跳转，大多数情况下我们是这种情况，所以在开发过程中，我们更多是使用React-router-dom</code></pre><h3 id="涉及到的npm包"><a href="#涉及到的npm包" class="headerlink" title="涉及到的npm包"></a>涉及到的npm包</h3><pre><code>classnames
-prop-types
-style-components(css in js)</code></pre><h3 id="redux"><a href="#redux" class="headerlink" title="redux"></a>redux</h3><h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><pre><code>1. Redux依靠一个统一且不可变的数据存储来同步数据，并且更新那里的数据时会触发应用的更新渲染。 
-2. state的更新是以一种不可变的方式进行，它会发布一条明确的action消息，这个消息必须被reducer函数处理。 
-由于使用了这样明确的方式，很容易弄清楚一个action是如何影响程序的state
-state(js对象)
-action(js对象) 具体接收dispach传递的参数后怎么处理
-    action 本质上是 JavaScript 普通对象。
-    我们约定，action 内必须使用一个字符串类型的 type 字段来表示将要执行的动作。
-    多数情况下，type 会被定义成字符串常量。当应用规模越来越大时，建议使用单独的模块或文件来存放 action。
-reducer 只是一个接收 state 和 action，并返回新的 state 的函数，和view的dispatch隔离
-combineReducers()合并值，reducer其实就是state的状态定义    
-dispatch(action)来改变state的值
-3. redux-thunk(中间件异步action初级方案)和 redux-saga(中间件异步action进阶方案)
-4. dva-cli
-        阿里基于redux和react和webpack 是一个基于 Redux 的 轻量级数据流方案</code></pre><h4 id="connect和provider组件"><a href="#connect和provider组件" class="headerlink" title="connect和provider组件"></a>connect和provider组件</h4><pre><code>1. connect的参数
-mapStateToProps
-    入参state，return一个传递给展示组件props使用的对象，还可以使用第二个参数，代表容器组件的props对象
-    mapStateToProps会订阅 Store，每当state更新的时候，就会自动执行，重新计算 UI 组件的参数，从而触发 UI 组件的重新渲染
-mapDisapachToProps
-    入参dispatch，return一个传递给展示组件props使用的对象方法
-    可以通过import { bindActionCreators } from &quot;redux&quot;;来把容器组件dispatch要触发的action传递给展示容器
-2. React-Redux 提供Provider组件，可以让容器组件拿到state</code></pre><h4 id="redux-thunk，dva"><a href="#redux-thunk，dva" class="headerlink" title="redux-thunk，dva"></a>redux-thunk，dva</h4><h4 id="immutable"><a href="#immutable" class="headerlink" title="immutable"></a>immutable</h4><h4 id="React-Portal"><a href="#React-Portal" class="headerlink" title="React Portal"></a>React Portal</h4><pre><code>Portal 提供了一种将子节点渲染到存在于父组件以外的 DOM 节点的优秀的方案
-(一个组件调用一个 append 到 body 上的 html 片段)
-React16 ReactDOM.createPortal(child, container) 的使用
-``
-const modalRoot = document.getElementById(&apos;modal-root&apos;);
-
-    class Modal extends React.Component {
-    constructor(props) {
-        super(props);
-        this.el = document.createElement(&apos;div&apos;);
-    }
-
-    componentDidMount() {
-        modalRoot.appendChild(this.el);
-    }
-
-    componentWillUnmount() {
-        modalRoot.removeChild(this.el);
-    }
-
-    render() {
-        return ReactDOM.createPortal(
-        this.props.children,
-        this.el,
-        );
-    }
-    }
-    ```
-// 在 simple-spa 实践一下 Portal 的 dropdown 和 modal 代码</code></pre>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://uniquecrownclown.github.io/2020/04/08/knowledge/浏览器渲染加载过程/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="clown">
-      <meta itemprop="description" content="旭日照原野，万物皆欣荣">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="uniquecrownclown">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/08/knowledge/浏览器渲染加载过程/" class="post-title-link" itemprop="url">浏览器渲染</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-04-08 10:47:58" itemprop="dateCreated datePublished" datetime="2020-04-08T10:47:58+08:00">2020-04-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-01-04 10:27:26" itemprop="dateModified" datetime="2019-01-04T10:27:26+08:00">2019-01-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/知识笔记/" itemprop="url" rel="index"><span itemprop="name">知识笔记</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>假如现在页面里放在head的css文件下载速度很慢，页面会出现什么情况？<br>大概页面会等待这个CSS的下载，这个时候页面是白屏状态，然后这个CSS资源会有一个超时时间，<br>假如超过了这个超时时间，这个资源相当于会下载失败，浏览器会直接跳过这个CSS资源，<br>根据已有的CSS资源生成CSS规则树，进而生成Render树，然后渲染页面。</p>
-<p>浏览器可以对拿到手的资源进行缓存，避免对一个资源的重复请求获取，节约时间提升性能</p>
-<p>浏览器缓存可以分为两类：强缓存和协商缓存</p>
-<ol>
-<li>强缓存：上一次的HTTP交互中，服务器通知了浏览器一个缓存时间，在该时间内对该资源的请求都可以直接使用缓存。</li>
-<li>协商缓存：向服务器发送请求，服务器会根据这个请求的request header的参数来判断是否命中，如果命中则返回304状态码告诉浏览器可以直接使用缓存，否则就重新处理请求并返回资源。<br>判断命中与否主要是通过对request header中的If-Modified-Since和Etag字段与服务器上资源的信息进行比对分析得出的。</li>
-</ol>
-
       
     </div>
 
@@ -1215,6 +1060,162 @@ const modalRoot = document.getElementById(&apos;modal-root&apos;);
   
   
 
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://uniquecrownclown.github.io/2020/04/08/knowledge/浏览器渲染加载过程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="clown">
+      <meta itemprop="description" content="旭日照原野，万物皆欣荣">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="uniquecrownclown">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/08/knowledge/浏览器渲染加载过程/" class="post-title-link" itemprop="url">浏览器渲染</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-04-08 10:47:58" itemprop="dateCreated datePublished" datetime="2020-04-08T10:47:58+08:00">2020-04-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-01-04 10:27:26" itemprop="dateModified" datetime="2019-01-04T10:27:26+08:00">2019-01-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/知识笔记/" itemprop="url" rel="index"><span itemprop="name">知识笔记</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>假如现在页面里放在head的css文件下载速度很慢，页面会出现什么情况？<br>大概页面会等待这个CSS的下载，这个时候页面是白屏状态，然后这个CSS资源会有一个超时时间，<br>假如超过了这个超时时间，这个资源相当于会下载失败，浏览器会直接跳过这个CSS资源，<br>根据已有的CSS资源生成CSS规则树，进而生成Render树，然后渲染页面。</p>
+<p>浏览器可以对拿到手的资源进行缓存，避免对一个资源的重复请求获取，节约时间提升性能</p>
+<p>浏览器缓存可以分为两类：强缓存和协商缓存</p>
+<ol>
+<li>强缓存：上一次的HTTP交互中，服务器通知了浏览器一个缓存时间，在该时间内对该资源的请求都可以直接使用缓存。</li>
+<li>协商缓存：向服务器发送请求，服务器会根据这个请求的request header的参数来判断是否命中，如果命中则返回304状态码告诉浏览器可以直接使用缓存，否则就重新处理请求并返回资源。<br>判断命中与否主要是通过对request header中的If-Modified-Since和Etag字段与服务器上资源的信息进行比对分析得出的。</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://uniquecrownclown.github.io/2020/04/08/knowledge/java笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="clown">
+      <meta itemprop="description" content="旭日照原野，万物皆欣荣">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="uniquecrownclown">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/08/knowledge/java笔记/" class="post-title-link" itemprop="url">java笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-04-08 10:47:58" itemprop="dateCreated datePublished" datetime="2020-04-08T10:47:58+08:00">2020-04-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-09-29 11:48:13" itemprop="dateModified" datetime="2019-09-29T11:48:13+08:00">2019-09-29</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/知识笔记/" itemprop="url" rel="index"><span itemprop="name">知识笔记</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="callback"><a href="#callback" class="headerlink" title="callback"></a>callback</h3><p>同步回调<br>代码运行到某一个位置的时候，如果遇到了需要回调的代码，会在这里等待，等待回调结果返回后再继续执行。</p>
+<p>异步回调<br>代码执行到需要回调的代码的时候，并不会停下来，而是继续执行，当然可能过一会回调的结果会返回回来。</p>
+<h3 id="listener"><a href="#listener" class="headerlink" title="listener"></a>listener</h3><p>实现异步监听</p>
+<h3 id="io与nio"><a href="#io与nio" class="headerlink" title="io与nio"></a>io与nio</h3><h3 id="win32下的锁屏实现"><a href="#win32下的锁屏实现" class="headerlink" title="win32下的锁屏实现"></a>win32下的锁屏实现</h3><pre><code><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.eclipse.swt.events.DisposeEvent;  </span><br><span class="line"><span class="keyword">import</span> org.eclipse.swt.events.DisposeListener;  </span><br><span class="line"><span class="keyword">import</span> org.eclipse.swt.internal.win32.OS;  </span><br><span class="line"><span class="keyword">import</span> org.eclipse.swt.widgets.Shell;  </span><br><span class="line"><span class="keyword">import</span> org.sf.feeling.swt.win32.extension.hook.Hook;  </span><br><span class="line"><span class="keyword">import</span> org.sf.feeling.swt.win32.extension.hook.Keyboard_LLHook;  </span><br><span class="line"><span class="keyword">import</span> org.sf.feeling.swt.win32.extension.hook.Mouse_LLHook;  </span><br><span class="line"><span class="keyword">import</span> org.sf.feeling.swt.win32.extension.hook.data.Keyboard_LLHookData;  </span><br><span class="line"><span class="keyword">import</span> org.sf.feeling.swt.win32.extension.hook.data.Mouse_LLHookData;  </span><br><span class="line"><span class="keyword">import</span> org.sf.feeling.swt.win32.extension.hook.interceptor.InterceptorFlag;  </span><br><span class="line"><span class="keyword">import</span> org.sf.feeling.swt.win32.extension.hook.interceptor.Keyboard_LLHookInterceptor;  </span><br><span class="line"><span class="keyword">import</span> org.sf.feeling.swt.win32.extension.hook.interceptor.Mouse_LLHookInterceptor;  </span><br><span class="line"><span class="keyword">import</span> org.sf.feeling.swt.win32.extension.registry.RegistryKey;  </span><br><span class="line"><span class="keyword">import</span> org.sf.feeling.swt.win32.extension.registry.RegistryValue;  </span><br><span class="line"><span class="keyword">import</span> org.sf.feeling.swt.win32.extension.registry.RootKey;  </span><br><span class="line"><span class="keyword">import</span> org.sf.feeling.swt.win32.extension.registry.ValueType;  </span><br><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment"> * Ticket:屏蔽系统快捷键，供锁屏使用(添加禁用鼠标事件) </span></span><br><span class="line"><span class="comment"> *  </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> XXXXX </span></span><br><span class="line"><span class="comment"> */</span>  </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WinEventInterceptor</span> </span>&#123;  </span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> Shell tagShell;  </span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> Keyboard_LLHookInterceptor keyboard_LLHookInterceptor;  </span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> Mouse_LLHookInterceptor mouse_LLHookInterceptor;  </span><br><span class="line">	<span class="keyword">static</span> &#123;  </span><br><span class="line">		keyboard_LLHookInterceptor = <span class="keyword">new</span> Keyboard_LLHookInterceptor() &#123;  </span><br><span class="line">			<span class="meta">@Override</span>  </span><br><span class="line">			<span class="function"><span class="keyword">public</span> InterceptorFlag <span class="title">intercept</span><span class="params">(Keyboard_LLHookData hookData)</span> </span>&#123;  </span><br><span class="line">				<span class="keyword">int</span> vkCode = hookData.vkCode();  </span><br><span class="line">				<span class="keyword">boolean</span> isCtrlPressed = OS.GetKeyState(<span class="number">17</span>) &lt; <span class="number">0</span> ? <span class="keyword">true</span> : <span class="keyword">false</span>;  </span><br><span class="line">				<span class="keyword">boolean</span> isAltPressed = OS.GetKeyState(<span class="number">18</span>) &lt; <span class="number">0</span> ? <span class="keyword">true</span> : <span class="keyword">false</span>;  </span><br><span class="line">				<span class="comment">// 屏蔽windows键  </span></span><br><span class="line">				<span class="keyword">if</span> (vkCode == <span class="number">91</span>) &#123;  </span><br><span class="line">					<span class="keyword">return</span> InterceptorFlag.FALSE;  </span><br><span class="line">				&#125;  </span><br><span class="line">				<span class="comment">// 屏蔽ALT+ESC  </span></span><br><span class="line">				<span class="keyword">if</span> (isAltPressed &amp;&amp; vkCode == <span class="number">27</span>) &#123;  </span><br><span class="line">					<span class="keyword">return</span> InterceptorFlag.FALSE;  </span><br><span class="line">				&#125;  </span><br><span class="line">				<span class="comment">// 屏蔽CTRL+ESC  </span></span><br><span class="line">				<span class="keyword">if</span> (isCtrlPressed &amp;&amp; vkCode == <span class="number">27</span>) &#123;  </span><br><span class="line">					<span class="keyword">return</span> InterceptorFlag.FALSE;  </span><br><span class="line">				&#125;  </span><br><span class="line">				<span class="comment">// 屏蔽ALT+TAB  </span></span><br><span class="line">				<span class="keyword">if</span> (isAltPressed &amp;&amp; vkCode == <span class="number">9</span>) &#123;  </span><br><span class="line">					<span class="keyword">return</span> InterceptorFlag.FALSE;  </span><br><span class="line">				&#125;  </span><br><span class="line">				<span class="comment">// 屏蔽ALT+F4  </span></span><br><span class="line">				<span class="keyword">if</span> (isAltPressed &amp;&amp; vkCode == <span class="number">115</span>) &#123;  </span><br><span class="line">					<span class="keyword">return</span> InterceptorFlag.FALSE;  </span><br><span class="line">				&#125;  </span><br><span class="line">				<span class="keyword">return</span> InterceptorFlag.TRUE;  </span><br><span class="line">			&#125;  </span><br><span class="line">		&#125;;  </span><br><span class="line">		mouse_LLHookInterceptor = <span class="keyword">new</span> Mouse_LLHookInterceptor() &#123;  </span><br><span class="line">			<span class="meta">@Override</span>  </span><br><span class="line">			<span class="function"><span class="keyword">public</span> InterceptorFlag <span class="title">intercept</span><span class="params">(Mouse_LLHookData hookData)</span> </span>&#123;  </span><br><span class="line">				<span class="keyword">return</span> InterceptorFlag.FALSE;  </span><br><span class="line">			&#125;  </span><br><span class="line">		&#125;;  </span><br><span class="line">	&#125;  </span><br><span class="line">	<span class="comment">/** </span></span><br><span class="line"><span class="comment">	 * 根据disable为true时，鼠标不可用；false时，鼠标可用 </span></span><br><span class="line"><span class="comment">	 *  </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> disable </span></span><br><span class="line"><span class="comment">	 */</span>  </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">setMouseDisable</span><span class="params">(<span class="keyword">boolean</span> disable)</span> </span>&#123;  </span><br><span class="line">		<span class="keyword">if</span> (disable) &#123;  </span><br><span class="line">			Mouse_LLHook.addHookInterceptor(mouse_LLHookInterceptor);  </span><br><span class="line">			<span class="keyword">if</span> (!Mouse_LLHook.isInstalled())  </span><br><span class="line">				Mouse_LLHook.installHook();  </span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;  </span><br><span class="line">			<span class="keyword">if</span> (Mouse_LLHook.isInstalled())  </span><br><span class="line">				Mouse_LLHook.unInstallHook();  </span><br><span class="line">		&#125;  </span><br><span class="line">	&#125;  </span><br><span class="line">	<span class="comment">/** </span></span><br><span class="line"><span class="comment">	 * 自定义添加禁用哪些鼠标事件 </span></span><br><span class="line"><span class="comment">	 *  </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> disable </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> mouseEvents </span></span><br><span class="line"><span class="comment">	 */</span>  </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">setMouseDisable</span><span class="params">(<span class="keyword">boolean</span> disable, <span class="keyword">final</span> MOUSE_EVENT... mouseEvents)</span> </span>&#123;  </span><br><span class="line">		<span class="keyword">if</span> (disable) &#123;  </span><br><span class="line">			Mouse_LLHook.addHookInterceptor(<span class="keyword">new</span> Mouse_LLHookInterceptor() &#123;  </span><br><span class="line">				<span class="meta">@Override</span>  </span><br><span class="line">				<span class="function"><span class="keyword">public</span> InterceptorFlag <span class="title">intercept</span><span class="params">(Mouse_LLHookData hookData)</span> </span>&#123;  </span><br><span class="line">					MOUSE_EVENT event = <span class="keyword">null</span>;  </span><br><span class="line">					<span class="keyword">if</span> (hookData.getWParam() == <span class="number">512</span>) &#123;  </span><br><span class="line">						event = MOUSE_EVENT.MOVE;  </span><br><span class="line">					&#125; <span class="keyword">else</span> <span class="keyword">if</span> (hookData.getWParam() == <span class="number">513</span> || hookData.getWParam() == <span class="number">514</span>) &#123;  </span><br><span class="line">						event = MOUSE_EVENT.LEFT_PRESS;  </span><br><span class="line">					&#125; <span class="keyword">else</span> <span class="keyword">if</span> (hookData.getWParam() == <span class="number">516</span> || hookData.getWParam() == <span class="number">517</span>) &#123;  </span><br><span class="line">						event = MOUSE_EVENT.RIGHT_PRESS;  </span><br><span class="line">					&#125; <span class="keyword">else</span> <span class="keyword">if</span> (hookData.getWParam() == <span class="number">519</span> || hookData.getWParam() == <span class="number">520</span>) &#123;  </span><br><span class="line">						event = MOUSE_EVENT.MIDDLE_PRESS;  </span><br><span class="line">					&#125; <span class="keyword">else</span> <span class="keyword">if</span> (hookData.getWParam() == <span class="number">522</span> &amp;&amp; hookData.getMouseData() &gt; <span class="number">0</span>) &#123;  </span><br><span class="line">						event = MOUSE_EVENT.WHEEL_UP;  </span><br><span class="line">					&#125; <span class="keyword">else</span> <span class="keyword">if</span> (hookData.getWParam() == <span class="number">522</span> &amp;&amp; hookData.getMouseData() &lt; <span class="number">0</span>) &#123;  </span><br><span class="line">						event = MOUSE_EVENT.WHEEL_DOWN;  </span><br><span class="line">					&#125;  </span><br><span class="line">					<span class="keyword">for</span> (MOUSE_EVENT mouse_event : mouseEvents) &#123;  </span><br><span class="line">						<span class="keyword">if</span> (mouse_event == event) &#123;  </span><br><span class="line">							<span class="keyword">return</span> InterceptorFlag.FALSE;  </span><br><span class="line">						&#125;  </span><br><span class="line">					&#125;  </span><br><span class="line">					<span class="keyword">return</span> InterceptorFlag.TRUE;  </span><br><span class="line">				&#125;  </span><br><span class="line">			&#125;);  </span><br><span class="line">			<span class="keyword">if</span> (!Mouse_LLHook.isInstalled())  </span><br><span class="line">				Mouse_LLHook.installHook();  </span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;  </span><br><span class="line">			<span class="keyword">if</span> (Mouse_LLHook.isInstalled())  </span><br><span class="line">				Mouse_LLHook.unInstallHook();  </span><br><span class="line">		&#125;  </span><br><span class="line">	&#125;  </span><br><span class="line">	<span class="comment">/** </span></span><br><span class="line"><span class="comment">	 * 禁用几个快捷键，windows键，ALT+ESC，CTRL+ESC，ALT+TAB，ALT+F4，任务管理器 </span></span><br><span class="line"><span class="comment">	 *  </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> shell </span></span><br><span class="line"><span class="comment">	 *            程序主窗口 </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> disable </span></span><br><span class="line"><span class="comment">	 *            是否禁用 </span></span><br><span class="line"><span class="comment">	 */</span>  </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">setKeyDisable</span><span class="params">(<span class="keyword">final</span> Shell shell, <span class="keyword">boolean</span> disable)</span> </span>&#123;  </span><br><span class="line">		<span class="keyword">if</span> (shell == <span class="keyword">null</span>) &#123;  </span><br><span class="line">			<span class="keyword">return</span>;  </span><br><span class="line">		&#125;  </span><br><span class="line">		DisposeListener disposeListener = <span class="keyword">new</span> DisposeListener() &#123;  </span><br><span class="line">			<span class="meta">@Override</span>  </span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">widgetDisposed</span><span class="params">(DisposeEvent e)</span> </span>&#123;  </span><br><span class="line">				<span class="keyword">if</span> (Hook.KEYBOARD.isInstalled(shell))  </span><br><span class="line">					Hook.KEYBOARD.uninstall(shell);  </span><br><span class="line">				taskmgrDisable(<span class="keyword">false</span>);  </span><br><span class="line">			&#125;  </span><br><span class="line">		&#125;;  </span><br><span class="line">		<span class="keyword">if</span> (disable) &#123;  </span><br><span class="line">			<span class="keyword">if</span> (tagShell == shell) &#123;  </span><br><span class="line">				<span class="keyword">return</span>;  </span><br><span class="line">			&#125;  </span><br><span class="line">			taskmgrDisable(disable);  </span><br><span class="line">			Keyboard_LLHook.addHookInterceptor(keyboard_LLHookInterceptor);  </span><br><span class="line">			<span class="keyword">if</span> (!Keyboard_LLHook.isInstalled())  </span><br><span class="line">				Keyboard_LLHook.installHook();  </span><br><span class="line">			shell.addDisposeListener(disposeListener);  </span><br><span class="line">			tagShell = shell;  </span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;  </span><br><span class="line">			<span class="keyword">if</span> (tagShell != shell) &#123;  </span><br><span class="line">				<span class="keyword">return</span>;  </span><br><span class="line">			&#125;  </span><br><span class="line">			taskmgrDisable(disable);  </span><br><span class="line">			<span class="keyword">if</span> (Keyboard_LLHook.isInstalled())  </span><br><span class="line">				Keyboard_LLHook.unInstallHook();  </span><br><span class="line">			shell.removeDisposeListener(disposeListener);  </span><br><span class="line">			tagShell = <span class="keyword">null</span>;  </span><br><span class="line">		&#125;  </span><br><span class="line">	&#125;  </span><br><span class="line">	<span class="comment">/** </span></span><br><span class="line"><span class="comment">	 * 禁用任务管理器 </span></span><br><span class="line"><span class="comment">	 *  </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> useable </span></span><br><span class="line"><span class="comment">	 *            useable:true为禁用，false为启用 </span></span><br><span class="line"><span class="comment">	 */</span>  </span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">taskmgrDisable</span><span class="params">(<span class="keyword">boolean</span> useable)</span> </span>&#123;  </span><br><span class="line">		RootKey currentUser = RootKey.HKEY_CURRENT_USER;  </span><br><span class="line">		RegistryKey key = <span class="keyword">new</span> RegistryKey(currentUser,  </span><br><span class="line">				<span class="string">"Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\System"</span>);  </span><br><span class="line">		<span class="keyword">if</span> (!key.exists()) &#123;  </span><br><span class="line">			key.create();  </span><br><span class="line">		&#125;  </span><br><span class="line">		RegistryValue value = <span class="keyword">new</span> RegistryValue();  </span><br><span class="line">		value.setType(ValueType.REG_DWORD);  </span><br><span class="line">		<span class="keyword">if</span> (useable)  </span><br><span class="line">			value.setData(<span class="number">1</span>);  </span><br><span class="line">		<span class="keyword">else</span>  </span><br><span class="line">			value.setData(<span class="number">0</span>);  </span><br><span class="line">		value.setName(<span class="string">"DisableTaskmgr"</span>);  </span><br><span class="line">		key.setValue(value);  </span><br><span class="line">	&#125;  </span><br><span class="line">	<span class="keyword">enum</span> MOUSE_EVENT &#123;  </span><br><span class="line">		MOVE, LEFT_PRESS, RIGHT_PRESS, MIDDLE_PRESS, WHEEL_UP, WHEEL_DOWN  </span><br><span class="line">	&#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></code></pre>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
 
   
   <nav class="pagination">
@@ -1284,7 +1285,7 @@ const modalRoot = document.getElementById(&apos;modal-root&apos;);
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

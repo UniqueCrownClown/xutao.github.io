@@ -20,18 +20,20 @@
     var CONFIG = {"hostname":"uniquecrownclown.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="旭日照原野，万物皆欣荣">
-<meta property="og:type" content="website">
-<meta property="og:title" content="uniquecrownclown">
-<meta property="og:url" content="https://uniquecrownclown.github.io/tags/博客，10月13/index.html">
+  <meta name="description" content="位运算符在js中的妙用：  使用&amp;amp;运算符判断一个数的奇偶  偶数 &amp;amp; 1 = 0 奇数 &amp;amp; 1 = 1 那么0&amp;amp;1=0,1&amp;amp;1=1  使用~~，&amp;gt;&amp;gt;,&amp;lt;&amp;lt;,&amp;gt;&amp;gt;&amp;gt;,|来取整  ~~3.14 = 3 3.14 &amp;gt;&amp;gt; 0 = 3 3.14 &amp;lt;&amp;lt; 0 = 3 3.14 | 0 = 3 3.14 &amp;g">
+<meta name="keywords" content="博客">
+<meta property="og:type" content="article">
+<meta property="og:title" content="位运算符操作">
+<meta property="og:url" content="https://uniquecrownclown.github.io/2019/10/13/knowledge/位运算符操作/index.html">
 <meta property="og:site_name" content="uniquecrownclown">
-<meta property="og:description" content="旭日照原野，万物皆欣荣">
+<meta property="og:description" content="位运算符在js中的妙用：  使用&amp;amp;运算符判断一个数的奇偶  偶数 &amp;amp; 1 = 0 奇数 &amp;amp; 1 = 1 那么0&amp;amp;1=0,1&amp;amp;1=1  使用~~，&amp;gt;&amp;gt;,&amp;lt;&amp;lt;,&amp;gt;&amp;gt;&amp;gt;,|来取整  ~~3.14 = 3 3.14 &amp;gt;&amp;gt; 0 = 3 3.14 &amp;lt;&amp;lt; 0 = 3 3.14 | 0 = 3 3.14 &amp;g">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-07-09T06:23:37.918Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="uniquecrownclown">
-<meta name="twitter:description" content="旭日照原野，万物皆欣荣">
+<meta name="twitter:title" content="位运算符操作">
+<meta name="twitter:description" content="位运算符在js中的妙用：  使用&amp;amp;运算符判断一个数的奇偶  偶数 &amp;amp; 1 = 0 奇数 &amp;amp; 1 = 1 那么0&amp;amp;1=0,1&amp;amp;1=1  使用~~，&amp;gt;&amp;gt;,&amp;lt;&amp;lt;,&amp;gt;&amp;gt;&amp;gt;,|来取整  ~~3.14 = 3 3.14 &amp;gt;&amp;gt; 0 = 3 3.14 &amp;lt;&amp;lt; 0 = 3 3.14 | 0 = 3 3.14 &amp;g">
 
-<link rel="canonical" href="https://uniquecrownclown.github.io/tags/博客，10月13/">
+<link rel="canonical" href="https://uniquecrownclown.github.io/2019/10/13/knowledge/位运算符操作/">
 
 
 <script id="page-configurations">
@@ -39,12 +41,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-Hans'
   };
 </script>
 
-  <title>Tag: 博客，10月13 | uniquecrownclown</title>
+  <title>位运算符操作 | uniquecrownclown</title>
   
 
 
@@ -143,51 +145,149 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">博客，10月13
-          <small>Tag</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://uniquecrownclown.github.io/2019/10/13/knowledge/位运算符操作/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="clown">
+      <meta itemprop="description" content="旭日照原野，万物皆欣荣">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="uniquecrownclown">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          位运算符操作
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-10-13 11:20:32" itemprop="dateCreated datePublished" datetime="2019-10-13T11:20:32+08:00">2019-10-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-07-09 14:23:37" itemprop="dateModified" datetime="2020-07-09T14:23:37+08:00">2020-07-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/知识笔记/" itemprop="url" rel="index"><span itemprop="name">知识笔记</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2017</span>
+        <p>位运算符在js中的妙用：</p>
+<ol>
+<li>使用&amp;运算符判断一个数的奇偶</li>
+</ol>
+<p>偶数 &amp; 1 = 0</p>
+<p>奇数 &amp; 1 = 1</p>
+<p>那么0&amp;1=0,1&amp;1=1</p>
+<ol start="2">
+<li>使用~~，&gt;&gt;,&lt;&lt;,&gt;&gt;&gt;,|来取整</li>
+</ol>
+<p>~~3.14 = 3</p>
+<p>3.14 &gt;&gt; 0 = 3</p>
+<p>3.14 &lt;&lt; 0 = 3 3.14 | 0 = 3 3.14 &gt;&gt;&gt; 0 = 3(&gt;&gt;&gt;不可对负数取整)</p>
+<p>注意：~~-3.14 = -3 其它的一样</p>
+<ol start="3">
+<li>使用&lt;&lt;,&gt;&gt;来计算乘除</li>
+</ol>
+<p>乘法：</p>
+<p>1*2 = 2</p>
+<p>1&lt;&gt;1 = 1(2/2的一次方)</p>
+<ol start="4">
+<li>利用^来完成比较两个数是否相等</li>
+</ol>
+<p>1 ^ 1 = 0</p>
+<p>1 ^ 非1数 ！=0</p>
+<p>所以同一个数……同一个数等于0，否则不等于0</p>
+<ol start="5">
+<li>使用^来完成值交换</li>
+</ol>
+<p>a = 1</p>
+<p>b = 2</p>
+<p>a ^= b</p>
+<p>b ^= a</p>
+<p>a ^= b</p>
+<p>结果a=2，b=1</p>
+<ol start="6">
+<li>使用&amp;,&gt;&gt;,|来完成rgb值和16进制颜色值之间的转换</li>
+</ol>
+<p>16进制颜色值转RGB：</p>
+<p><code>function hexToRGB(hex){
+    var hex = hex.replace(&quot;#&quot;,&quot;0x&quot;),
+        r = hex &gt;&gt; 16,
+        g = hex &gt;&gt; 8 &amp; 0xff,
+        b = hex &amp; 0xff;
+    return &quot;rgb(&quot;+r+&quot;,&quot;+g+&quot;,&quot;+b+&quot;)&quot;;
+}</code></p>
+<p>RGB转16进制颜色值：</p>
+<p><code>function RGBToHex(rgb){
+    var rgbArr = rgb.split(/[^\d]+/),
+        color = rgbArr[1]&lt;&lt;16 | rgbArr[2]&lt;&lt;8 | rgbArr[3];
+    return &quot;#&quot;+color.toString(16);
+}</code></p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2017-10-13T11:20:32+08:00"
-              content="2017-10-13">
-          10-13
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/博客/" rel="tag"># 博客</a>
+          </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2017/10/13/ballmusic/动画/" itemprop="url">
-            <span itemprop="name">动画</span>
-          </a>
-      </div>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/10/13/ballmusic/动画/" rel="prev" title="动画">
+      <i class="fa fa-chevron-left"></i> 动画
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/03/04/life/record/" rel="next" title="record">
+      record <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
